@@ -1,0 +1,173 @@
+/* ============================================================
+   Studio Laddaga — Stili della home
+   Va caricato DOPO blog/assets/blog.css, di cui riusa tutti i
+   token (:root), header, footer, bottoni e card. Qui ci sono
+   solo le regole che il blog non ha: hero con form, sezioni,
+   step, "chi sono", box domicilio e contatti.
+   ============================================================ */
+
+/* evita lo scroll orizzontale causato dalle forme decorative dell'hero
+   (clip, a differenza di hidden, non rompe l'header sticky) */
+body{overflow-x:clip}
+
+/* ---------- Struttura sezioni ---------- */
+.section{padding:4rem 0}
+.section-white{background:#fff;border-block:1px solid var(--lilac-soft)}
+.section-dark{background:var(--lilac-deep);color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+
+.section-head{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+.section-head.center{text-align:center}
+.section-head h2{
+  font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);
+  line-height:1.2;margin:0 0 .6rem;color:var(--lilac-deep);
+}
+.section-head p{margin:0;max-width:60ch;color:var(--ink-soft)}
+.section-head.center p{margin:0 auto}
+.section-dark .section-head h2{color:#fff}
+.section-dark .section-head p{color:var(--lilac-mist)}
+
+/* etichetta piccola sopra i titoli, stessa resa di .card .cat */
+.eyebrow{display:block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);margin-bottom:.6rem}
+.section-dark .eyebrow{color:var(--lilac-mist)}
+
+/* ---------- Hero con form di prenotazione ---------- */
+.home-hero{
+  color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(140deg,var(--lilac-deep),var(--lilac) 70%,var(--accent));
+  padding:3.2rem 0 3.5rem;
+}
+.home-hero::after{ /* stesso cerchio luminoso degli hero del blog */
+  content:"";position:absolute;right:-110px;top:-60px;width:380px;height:380px;
+  background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.22),rgba(255,255,255,0) 62%);
+  border-radius:50%;pointer-events:none;
+}
+.home-hero .wrap{position:relative;z-index:1;display:grid;gap:2.2rem}
+.home-hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.1;margin:0 0 1rem}
+.home-hero h1 em{font-style:italic;color:var(--lilac-mist)}
+.home-hero .lede{font-size:1.15rem;max-width:44ch;margin:0 0 1.6rem;opacity:.94}
+.home-hero .cat-tag{margin-bottom:1.1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero-actions .btn{background:#fff;color:var(--lilac-deep)}
+.hero-actions .btn:hover{background:var(--lilac-soft)}
+.hero-actions .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.hero-actions .btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero-points{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.hero-points li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.3rem .9rem;font-size:.88rem}
+
+/* foto dell'hero: su mobile formato orizzontale centrato sul viso, su desktop verticale */
+.hero-photo{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 44px rgba(20,12,35,.3)}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 28%}
+
+/* card bianca del form */
+.booking{
+  background:#fff;color:var(--ink);border-radius:var(--radius);
+  padding:1.6rem 1.4rem;box-shadow:0 24px 60px rgba(44,33,66,.25);
+}
+.booking h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 .3rem;color:var(--lilac-deep)}
+.booking > p{margin:0 0 1.2rem;font-size:.95rem;color:var(--ink-soft)}
+
+/* ---------- Form ---------- */
+.form{display:grid;gap:.85rem}
+.field{display:grid;gap:.3rem}
+.field label{font-size:.88rem;font-weight:600;color:var(--lilac-deep)}
+.field label .req{color:var(--lilac)}
+.field input,.field textarea{
+  width:100%;font:inherit;font-size:1rem;color:var(--ink);
+  background:var(--bg);border:1.5px solid var(--lilac-soft);border-radius:12px;padding:.7rem .85rem;
+}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.btn-block{display:flex;width:100%;text-align:center;padding:.8rem 1.15rem;font-size:1rem;min-height:48px}
+.btn-wa{background:#25D366;color:#0B3D20;gap:.5rem}
+.btn-wa:hover{background:#1fbd5a}
+.btn-wa svg{width:20px;height:20px}
+.or{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--ink-soft)}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--lilac-soft)}
+.form-row{display:grid;gap:.85rem}
+.form-actions{display:grid;gap:.85rem}
+.form-status{margin:0;font-size:.92rem;min-height:1.2em}
+.form-status.ok{color:var(--ok)}
+.form-status.err{color:var(--warn-edge)}
+.form-note{margin:0;font-size:.8rem;color:var(--ink-soft)}
+
+/* ---------- Card della home (servizi e anteprima blog) ---------- */
+/* Le card riusano .card / .card-band / .card-body del blog.
+   In home il titolo della card è un h3 (sotto l'h2 di sezione). */
+.card h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.12rem;line-height:1.3;margin:0}
+.services{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))} /* 8 servizi: 4 colonne su desktop */
+.service .card-band{background:linear-gradient(120deg,#6E4FA3,#9A7BC8)}
+.service:nth-child(4n+2) .card-band{background:linear-gradient(120deg,#53418A,#7E6AB8)}
+.service:nth-child(4n+3) .card-band{background:linear-gradient(120deg,#7A5BAE,#B49ADB)}
+.service:nth-child(4n+4) .card-band{background:linear-gradient(120deg,#463566,#6E4FA3)}
+div.card:hover{box-shadow:none;border-color:var(--lilac-soft)} /* le card senza link non "reagiscono" */
+.more{text-align:center;margin:-1.5rem 0 0}
+
+/* ---------- Il mio approccio: 4 step ---------- */
+.steps{
+  list-style:none;max-width:1080px;margin:2rem auto 0;padding:0 1.25rem;
+  display:grid;gap:1.15rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+}
+.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:1.4rem 1.3rem}
+.step-num{font-family:"Fraunces",serif;font-style:italic;font-size:2.4rem;line-height:1;color:var(--accent);display:block;margin-bottom:.8rem}
+.step h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;margin:0 0 .4rem}
+.step p{margin:0;font-size:.95rem;color:var(--lilac-mist)}
+
+/* ---------- Chi sono ---------- */
+.about{display:grid;gap:2rem;align-items:center}
+.photo{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;width:100%;background:var(--lilac-soft)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.about h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;margin:0 0 .8rem;color:var(--lilac-deep)}
+.about p{color:var(--ink-soft)}
+.signature{font-family:"Fraunces",serif;font-style:italic;font-size:1.35rem;color:var(--lilac)!important;margin:1.2rem 0 0}
+
+/* ---------- Box domicilio ---------- */
+.home-visit{
+  color:#fff;border-radius:var(--radius);padding:2.2rem 1.5rem;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--lilac),var(--accent));
+  box-shadow:0 18px 44px rgba(44,33,66,.18);
+}
+.home-visit::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.1)}
+.home-visit > *{position:relative;z-index:1}
+.home-visit h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:0 0 .7rem}
+.home-visit p{max-width:60ch;opacity:.94;margin:0 0 1rem}
+.home-visit ul{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.4rem}
+.home-visit li{padding-left:1.6rem;position:relative}
+.home-visit li::before{content:"✓";position:absolute;left:0;font-weight:700}
+.home-visit .btn{background:#fff;color:var(--lilac-deep)}
+.home-visit .btn:hover{background:var(--lilac-soft)}
+.home-visit .eyebrow{color:#fff;opacity:.85}
+
+/* ---------- Contatti ---------- */
+.contact{display:grid;gap:1.15rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:2rem}
+.contact-item{background:#fff;border:1px solid var(--lilac-soft);border-radius:var(--radius);padding:1.3rem 1.3rem 1.4rem}
+.contact-item .icon{width:44px;height:44px;border-radius:12px;background:var(--lilac-soft);color:var(--lilac);display:grid;place-items:center;margin-bottom:.8rem}
+.contact-item .icon svg{width:22px;height:22px}
+.contact-item h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .3rem}
+.contact-item p{margin:0}
+.contact-item a{color:var(--lilac-deep);font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+.contact-item a:hover{color:var(--lilac)}
+.hours{list-style:none;padding:0;margin:0;font-size:.95rem}
+.hours li{display:flex;flex-wrap:wrap;justify-content:space-between;column-gap:1rem}
+
+/* ---------- Tablet ---------- */
+@media(min-width:700px){
+  .form-row{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- Desktop ---------- */
+@media(min-width:960px){
+  .section{padding:5.5rem 0}
+  /* hero a due colonne, card del form che "scende" sulla sezione successiva */
+  .home-hero{padding:4.5rem 0 0;overflow:visible}
+  /* testo e foto affiancati, form come barra orizzontale sovrapposta al bordo inferiore */
+  .home-hero .wrap{grid-template-columns:1.2fr .8fr;grid-template-areas:"text photo" "form form";align-items:center;gap:2.5rem 3.5rem}
+  .hero-text{grid-area:text}
+  .hero-photo{grid-area:photo;aspect-ratio:4/5}
+  .booking{grid-area:form;margin-bottom:-6rem;padding:2rem 2.2rem}
+  .home-hero + .section{padding-top:9.5rem}
+  .form-actions{grid-template-columns:1fr auto 1fr;align-items:center}
+  .or::before,.or::after{display:none}
+  .about{grid-template-columns:.8fr 1.2fr;gap:4rem}
+  .home-visit{padding:3.2rem 3.4rem}
+}
