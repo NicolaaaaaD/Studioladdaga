@@ -15,6 +15,13 @@ blog/assets/blog.css  design system condiviso: palette, font, header, footer, ca
 sitemap.xml, robots.txt
 ```
 
+## Brand
+
+Colori campionati dal logo (`img/antonella-laddaga-icona.png`) e definiti come variabili in `blog/assets/blog.css`:
+viola `#5B3A8E`, lilla `#C3B3DF`, testo `#22302D`, crema `#F6F5F1`.
+Il simbolo nell'header (`img/antonella-laddaga-simbolo.png`) e le favicon sono ritagli dell'icona ufficiale.
+Il verde è usato solo per i bottoni WhatsApp.
+
 ## Dati da completare
 
 Nei file HTML ci sono segnaposto tra parentesi quadre da sostituire con i dati reali:

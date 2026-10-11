@@ -7,16 +7,17 @@
 <meta name="description" content="Fisioterapista a Gravina in Puglia: riabilitazione ortopedica e sportiva, terapia manuale, linfodrenaggio e fisioterapia a domicilio. Prenota una valutazione.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Studio Laddaga — Fisioterapista a Gravina in Puglia">
+<meta property="og:title" content="Antonella Laddaga – Fisioterapista a Gravina in Puglia">
 <meta property="og:description" content="Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.">
+<meta property="og:site_name" content="Antonella Laddaga – Studio di Fisioterapia">
+<meta property="og:url" content="https://www.studioladdaga.it/">
 
-<!-- Favicon: cerchio lilla con la "L", SVG inline (nessun file esterno) -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%236E4FA3'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='white' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
-
-<!-- Stessi font del blog: Fraunces (titoli) + Figtree (testo) -->
+<!-- Stessi font del blog: Fraunces (titoli) + Figtree (testo) + Marcellus (marchio) -->
+<!-- La foto dell'hero è il primo elemento grande: la precarichiamo -->
+<link rel="preload" as="image" href="img/antonella-cutout-800.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;600;700&family=Marcellus&display=swap" rel="stylesheet">
 
 <!-- Design system condiviso: prima il CSS del blog (token, header, footer, card), poi le regole della home -->
 <link rel="stylesheet" href="blog/assets/blog.css">
@@ -28,7 +29,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Physiotherapy",
-  "name": "Studio Laddaga — Fisioterapia",
+  "name": "Antonella Laddaga – Studio di Fisioterapia",
+  "alternateName": "Studio Laddaga",
+  "url": "https://www.studioladdaga.it/",
+  "logo": "https://www.studioladdaga.it/img/antonella-laddaga-logo.png",
+  "image": ["https://www.studioladdaga.it/img/antonella-laddaga-logo.png", "https://www.studioladdaga.it/img/antonella.jpg"],
   "description": "Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.",
   "employee": { "@type": "Person", "name": "Antonella Laddaga", "jobTitle": "Fisioterapista" },
   "telephone": "[NUMERO]",
@@ -47,6 +52,14 @@
 }
 </script>
 <script>document.documentElement.classList.add("js")</script>
+<!-- brand:start — favicon generate da img/antonella-laddaga-icona.png -->
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#5B3A8E">
+<meta property="og:image" content="https://www.studioladdaga.it/img/antonella-laddaga-logo.png">
+<meta property="og:image:alt" content="Logo Antonella Laddaga – Studio di Fisioterapia">
+<!-- brand:end -->
 </head>
 <body>
 <!--
@@ -59,7 +72,7 @@
 <!-- ============ HEADER (stesso markup del blog) ============ -->
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html">Studio <span>Laddaga</span></a>
+    <a class="brand" href="index.html"><img src="img/antonella-laddaga-simbolo.png" width="40" height="40" alt="Antonella Laddaga – Studio di Fisioterapia"><span>Antonella Laddaga</span></a>
     <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Apri il menu">
       <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
@@ -79,6 +92,8 @@
 
 <!-- ============ HERO + FORM DI PRENOTAZIONE ============ -->
 <section class="home-hero" aria-labelledby="hero-title">
+  <!-- Filigrana: simbolo del logo (stessi tracciati di img/antonella-laddaga-logo.svg) -->
+  <svg class="hero-watermark" viewBox="20 18 80 84" aria-hidden="true" focusable="false"><path d="M58 24 C30 38 26 76 52 96"/><path d="M62 24 C90 38 94 76 68 96"/><circle cx="60" cy="62" r="9"/></svg>
   <div class="wrap">
     <div class="hero-text">
       <span class="cat-tag">Fisioterapista a Gravina in Puglia</span>
@@ -97,7 +112,10 @@
 
     <!-- Foto principale: sopra la piega, quindi niente lazy loading e priorità alta -->
     <figure class="hero-photo">
-      <img src="img/hero.jpg" width="942" height="1177" alt="Antonella Laddaga, fisioterapista, nel suo studio a Gravina in Puglia" fetchpriority="high" decoding="async">
+      <picture>
+        <source srcset="img/antonella-cutout-800.webp" type="image/webp">
+        <img src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista a Gravina in Puglia" fetchpriority="high" decoding="async">
+      </picture>
     </figure>
 
     <div class="booking" id="prenota">
@@ -404,8 +422,8 @@
   <!-- Dati dello studio: sostituire i segnaposto tra parentesi quadre -->
   <div class="wrap">
     <div>
-      <h4>Studio Laddaga</h4>
-      <p>Antonella Laddaga, fisioterapista.<br>Gravina in Puglia (BA) — in studio e a domicilio.</p>
+      <a class="brand" href="index.html"><img src="img/antonella-laddaga-simbolo.png" width="40" height="40" alt="Antonella Laddaga – Studio di Fisioterapia" loading="lazy"><span>Antonella Laddaga</span></a>
+      <p>Studio di Fisioterapia.<br>Gravina in Puglia (BA) — in studio e a domicilio.</p>
       <!-- Instagram: se non c'è un profilo, eliminare questa riga -->
       <p><a href="https://www.instagram.com/[PROFILO]/" target="_blank" rel="noopener">Instagram</a></p>
     </div>
@@ -418,7 +436,7 @@
       <p>[INDIRIZZO]<br>Gravina in Puglia (BA)<br>Orari: [ORARI]</p>
     </div>
   </div>
-  <div class="legal">I contenuti di questo sito hanno scopo puramente informativo e non sostituiscono in alcun modo la valutazione, la diagnosi o il trattamento di un medico o di un professionista sanitario. © Studio Laddaga · P.IVA [PARTITA IVA]</div>
+  <div class="legal">I contenuti di questo sito hanno scopo puramente informativo e non sostituiscono in alcun modo la valutazione, la diagnosi o il trattamento di un medico o di un professionista sanitario. © Antonella Laddaga – Studio di Fisioterapia · P.IVA [PARTITA IVA]</div>
 </footer>
 <!-- Bottone WhatsApp flottante: [NUMERO] in formato 39XXXXXXXXXX -->
 <a class="wa-float" href="https://wa.me/[NUMERO]" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
