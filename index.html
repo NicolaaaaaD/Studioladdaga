@@ -1,447 +1,537 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fisioterapista a Gravina in Puglia | Studio Laddaga — in studio e a domicilio</title>
-<meta name="description" content="Fisioterapista a Gravina in Puglia: riabilitazione ortopedica e sportiva, terapia manuale, linfodrenaggio e fisioterapia a domicilio. Prenota una valutazione.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Antonella Laddaga – Fisioterapista a Gravina in Puglia">
-<meta property="og:description" content="Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.">
-<meta property="og:site_name" content="Antonella Laddaga – Studio di Fisioterapia">
-<meta property="og:url" content="https://www.studioladdaga.it/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fisioterapista a Gravina in Puglia | Studio Laddaga – in studio e a domicilio</title>
+  <meta name="description" content="Antonella Laddaga, fisioterapista a Gravina in Puglia. Riabilitazione ortopedica, terapia manuale, riabilitazione sportiva e fisioterapia a domicilio. Prenota una valutazione.">
+  <link rel="canonical" href="https://www.studioladdaga.it/">
+  <meta name="theme-color" content="#5B3A8E">
 
-<!-- Stessi font del blog: Fraunces (titoli) + Figtree (testo) + Marcellus (marchio) -->
-<!-- La foto dell'hero è il primo elemento grande: la precarichiamo -->
-<link rel="preload" as="image" href="img/antonella-cutout-800.webp" type="image/webp" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Figtree:wght@400;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <!-- Open Graph per la condivisione sui social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Studio Laddaga – Fisioterapista a Gravina in Puglia">
+  <meta property="og:description" content="Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:image" content="https://www.studioladdaga.it/img/antonella-laddaga-logo.png">
 
-<!-- Design system condiviso: prima il CSS del blog (token, header, footer, card), poi le regole della home -->
-<link rel="stylesheet" href="blog/assets/blog.css">
-<link rel="stylesheet" href="css/style.css">
+  <!-- Font: Inter (come il design di riferimento) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Dati strutturati schema.org per la SEO locale.
-     DA COMPLETARE con i dati reali (vedi elenco segnaposto nel <body>). -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Physiotherapy",
-  "name": "Antonella Laddaga – Studio di Fisioterapia",
-  "alternateName": "Studio Laddaga",
-  "url": "https://www.studioladdaga.it/",
-  "logo": "https://www.studioladdaga.it/img/antonella-laddaga-logo.png",
-  "image": ["https://www.studioladdaga.it/img/antonella-laddaga-logo.png", "https://www.studioladdaga.it/img/antonella.jpg"],
-  "description": "Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.",
-  "employee": { "@type": "Person", "name": "Antonella Laddaga", "jobTitle": "Fisioterapista" },
-  "telephone": "[NUMERO]",
-  "email": "[EMAIL]",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "[INDIRIZZO]",
-    "addressLocality": "Gravina in Puglia",
-    "addressRegion": "BA",
-    "postalCode": "70024",
-    "addressCountry": "IT"
-  },
-  "openingHours": "[ORARI]",
-  "areaServed": "Gravina in Puglia e dintorni",
-  "vatID": "[PARTITA IVA]"
-}
-</script>
-<script>document.documentElement.classList.add("js")</script>
-<!-- brand:start — favicon generate da img/antonella-laddaga-icona.png -->
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-<meta name="theme-color" content="#5B3A8E">
-<meta property="og:image" content="https://www.studioladdaga.it/img/antonella-laddaga-logo.png">
-<meta property="og:image:alt" content="Logo Antonella Laddaga – Studio di Fisioterapia">
-<!-- brand:end -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Dati strutturati per la SEO locale.
+       DA COMPLETARE: sostituire i segnaposto tra parentesi quadre. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physiotherapy",
+    "name": "Studio Laddaga – Fisioterapia",
+    "description": "Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.",
+    "logo": "https://www.studioladdaga.it/img/antonella-laddaga-logo.png",
+    "image": "https://www.studioladdaga.it/img/antonella-laddaga-logo.png",
+    "founder": { "@type": "Person", "name": "Antonella Laddaga", "jobTitle": "Fisioterapista" },
+    "telephone": "[NUMERO]",
+    "email": "[EMAIL]",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[INDIRIZZO]",
+      "addressLocality": "Gravina in Puglia",
+      "addressRegion": "BA",
+      "postalCode": "70024",
+      "addressCountry": "IT"
+    },
+    "areaServed": "Gravina in Puglia e dintorni"
+  }
+  </script>
 </head>
 <body>
-<!--
-  SEGNAPOSTO DA SOSTITUIRE (cerca le parentesi quadre):
-  [NUMERO]       telefono. Nei link tel: senza spazi (es. +393331234567);
-                 nei link wa.me in formato internazionale senza "+" (es. 393331234567)
-  [EMAIL] [INDIRIZZO] [ORARI] [PROFILO] [PARTITA IVA]
--->
+  <!--
+    SEGNAPOSTO DA SOSTITUIRE IN TUTTO IL SITO:
+    [NUMERO]  → telefono (nei link tel: senza spazi, es. +393331234567)
+    [WHATSAPP] → numero per WhatsApp in formato internazionale senza "+" (es. 393331234567)
+    [EMAIL] [INDIRIZZO] [PROFILO] [PARTITA IVA] [ORARI]
 
-<!-- ============ HEADER (stesso markup del blog) ============ -->
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="img/antonella-laddaga-simbolo.png" width="40" height="40" alt="Antonella Laddaga – Studio di Fisioterapia"><span>Antonella Laddaga</span></a>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Apri il menu">
-      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="principale">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#approccio">Il mio approccio</a>
-      <a href="blog/index.html">Blog</a>
-      <a href="#contatti">Contatti</a>
-      <a class="btn" href="#contatti">Prenota una valutazione</a>
-    </nav>
-  </div>
-</header>
+    FOTO DA INSERIRE (vedi i commenti nei singoli blocchi):
+    img/hero.jpg          → foto grande dell'hero (trattamento in studio)
+    img/antonella.jpg     → foto di Antonella per la sezione "Chi sono"
+    img/domicilio.jpg     → foto per la sezione a domicilio
+  -->
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
-<main>
+  <!-- ===================== HERO (blocco verde scuro + form sovrapposto) ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__green">
 
-<!-- ============ HERO + FORM DI PRENOTAZIONE ============ -->
-<section class="home-hero" aria-labelledby="hero-title">
-  <!-- Filigrana: simbolo del logo (stessi tracciati di img/antonella-laddaga-logo.svg) -->
-  <svg class="hero-watermark" viewBox="20 18 80 84" aria-hidden="true" focusable="false"><path d="M58 24 C30 38 26 76 52 96"/><path d="M62 24 C90 38 94 76 68 96"/><circle cx="60" cy="62" r="9"/></svg>
-  <div class="wrap">
-    <div class="hero-text">
-      <span class="cat-tag">Fisioterapista a Gravina in Puglia</span>
-      <h1 id="hero-title">Ritrova il movimento. <em>Senza dolore.</em></h1>
-      <p class="lede">Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#servizi">Scopri i servizi</a>
-        <a class="btn btn-ghost" href="#approccio">Il mio approccio</a>
-      </div>
-      <ul class="hero-points">
-        <li>Valutazione personalizzata</li>
-        <li>Anche a domicilio</li>
-        <li>Basata sulle evidenze</li>
-      </ul>
-    </div>
+      <!-- Header dentro l'hero, come nel design di riferimento -->
+      <header class="site-header">
+        <div class="container site-header__inner">
+          <a class="logo" href="index.html" aria-label="Studio Laddaga – Home">
+            <span class="logo__mark" aria-hidden="true">
+              <img src="img/antonella-laddaga-icona.png" width="42" height="42" alt="">
+            </span>
+            <span class="logo__name">Antonella Laddaga</span>
+          </a>
 
-    <!-- Foto principale: sopra la piega, quindi niente lazy loading e priorità alta -->
-    <figure class="hero-photo">
-      <picture>
-        <source srcset="img/antonella-cutout-800.webp" type="image/webp">
-        <img src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista a Gravina in Puglia" fetchpriority="high" decoding="async">
-      </picture>
-    </figure>
+          <nav class="nav" id="main-nav" aria-label="Menu principale">
+            <a class="nav__pill is-active" href="index.html" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Home</a>
+            <a class="nav__pill" href="#servizi">Servizi</a>
+            <a class="nav__pill" href="#approccio">Approccio</a>
+            <a class="nav__pill" href="#chi-sono">Chi sono</a>
+            <a class="nav__pill" href="blog/index.html">Blog</a>
+            <a class="nav__pill" href="#contatti">Contatti</a>
+          </nav>
 
-    <div class="booking" id="prenota">
-      <h2>Prenota una valutazione</h2>
-      <p>Lascia i tuoi dati: ti ricontatterò per fissare l'appuntamento.</p>
-
-      <!--
-        FORMSPREE — come attivare il modulo:
-        1) crea un account gratuito su https://formspree.io
-        2) crea un nuovo form e copia il suo ID (es. "xyzabcd")
-        3) qui sotto sostituisci IL_TUO_ID con quell'ID:
-           action="https://formspree.io/f/xyzabcd"
-        Le richieste arriveranno all'email collegata all'account Formspree.
-      -->
-      <form class="form" id="booking-form" action="https://formspree.io/f/IL_TUO_ID" method="POST">
-        <input type="hidden" name="_subject" value="Nuova richiesta di appuntamento dal sito">
-        <div class="form-row">
-          <div class="field">
-            <label for="nome">Nome <span class="req" aria-hidden="true">*</span></label>
-            <input id="nome" name="nome" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="telefono">Telefono <span class="req" aria-hidden="true">*</span></label>
-            <input id="telefono" name="telefono" type="tel" autocomplete="tel" required>
+          <div class="header-actions">
+            <a class="header-phone" href="tel:[NUMERO]">
+              <span class="header-phone__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              [NUMERO]
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Apri il menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
           </div>
         </div>
-        <div class="field">
-          <label for="messaggio">Messaggio</label>
-          <textarea id="messaggio" name="messaggio" placeholder="Raccontami in breve il tuo problema e se preferisci il trattamento in studio o a domicilio"></textarea>
+      </header>
+
+      <!-- Riga alta dell'hero: paragrafo a sinistra, titolo grande a destra -->
+      <div class="container hero__top">
+        <p class="hero__lead">Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio, per ritrovare forza, mobilità e fiducia nel tuo corpo.</p>
+        <h1 class="hero__title">Ritrova il movimento.<br>Senza <span class="accent">dolore</span>.</h1>
+      </div>
+
+      <!-- Filigrana del logo sullo sfondo, come nel riferimento -->
+      <span class="hero__watermark" aria-hidden="true">
+        <img src="img/simbolo-trasparente.png" width="348" height="470" alt="">
+      </span>
+    </div>
+
+    <!-- Parte bassa: form di prenotazione (sovrapposto al verde) + foto grande -->
+    <div class="container hero__bottom">
+      <div class="booking-card" id="prenota">
+        <!--
+          FORMSPREE: per attivare il modulo
+          1) crea un account gratuito su https://formspree.io
+          2) crea un nuovo form e copia il suo ID (es. "xyzabcd")
+          3) sostituisci "IL_TUO_ID" qui sotto con quell'ID:
+             action="https://formspree.io/f/xyzabcd"
+          Le richieste arriveranno all'email collegata all'account Formspree.
+        -->
+        <form class="form" id="booking-form" action="https://formspree.io/f/IL_TUO_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nuova richiesta di appuntamento dal sito">
+
+          <div class="form__field">
+            <label for="nome">Il tuo nome <span class="req" aria-hidden="true">*</span></label>
+            <input id="nome" name="nome" type="text" placeholder="Nome e cognome" autocomplete="name" required>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label for="email">La tua email <span class="req" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" placeholder="nome@esempio.it" autocomplete="email" required>
+            </div>
+            <div class="form__field">
+              <label for="telefono">Telefono <span class="req" aria-hidden="true">*</span></label>
+              <input id="telefono" name="telefono" type="tel" placeholder="333 123 4567" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="data">Data e ora preferite</label>
+            <div class="form__date">
+              <input id="data" name="data_e_ora" type="datetime-local">
+              <span class="form__date-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="messaggio">Il tuo messaggio</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Raccontami brevemente il tuo problema e se preferisci il trattamento in studio o a domicilio"></textarea>
+          </div>
+
+          <button class="btn btn--primary btn--block" type="submit">Richiedi un appuntamento</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+
+          <div class="form__divider">oppure</div>
+          <!-- WhatsApp: sostituire [WHATSAPP] con il numero in formato 39XXXXXXXXXX -->
+          <a class="btn btn--whatsapp btn--block" href="https://wa.me/[WHATSAPP]?text=Buongiorno%2C%20vorrei%20prenotare%20una%20valutazione." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+            Scrivimi su WhatsApp
+          </a>
+          <p class="form__privacy">I tuoi dati saranno usati solo per ricontattarti riguardo alla tua richiesta.</p>
+        </form>
+      </div>
+
+      <!-- Foto grande dell'hero.
+           SOSTITUIRE il div segnaposto con:
+           <img class="hero__photo-img" src="img/hero.jpg" alt="Trattamento fisioterapico in studio"> -->
+      <div class="hero__photo hero__photo--cutout">
+        <span class="hero__blob" aria-hidden="true"></span>
+        <picture>
+          <source srcset="img/antonella-cutout-800.webp" type="image/webp">
+          <img class="hero__cutout" src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista a Gravina in Puglia" fetchpriority="high">
+        </picture>
+
+        <!-- Badge in basso a destra, come nel riferimento -->
+        <div class="trust-badge">
+          <div class="trust-badge__avatars" aria-hidden="true">
+            <span>A</span><span>M</span><span>G</span>
+          </div>
+          <p>Pazienti seguiti con cura,<br>in studio e a domicilio</p>
         </div>
-        <div class="form-actions">
-        <button class="btn btn-block" type="submit">Richiedi un appuntamento</button>
-        <div class="or">oppure</div>
-        <!-- WhatsApp: [NUMERO] in formato internazionale senza "+" (es. 393331234567) -->
-        <a class="btn btn-block btn-wa" href="https://wa.me/[NUMERO]?text=Buongiorno%2C%20vorrei%20prenotare%20una%20valutazione." target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
-          Scrivimi su WhatsApp
-        </a>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenuto">
+
+    <!-- ===================== SERVIZI ===================== -->
+    <section class="section section--cream" id="servizi" aria-labelledby="servizi-title">
+      <div class="container">
+        <div class="section-head section-head--row reveal">
+          <h2 id="servizi-title">Servizi di <span class="accent-deep">Fisioterapia</span></h2>
+          <a class="btn btn--pill" href="#contatti">Tutti i servizi <span class="iconbtn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
         </div>
-        <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="form-note">I tuoi dati saranno usati solo per ricontattarti riguardo alla tua richiesta.</p>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- ============ SERVIZI ============ -->
-<!-- Card con lo stesso markup del blog. Dove esiste un articolo collegato la card è un link. -->
-<section class="section" id="servizi" aria-labelledby="servizi-title">
-  <div class="section-head">
-    <span class="eyebrow">Servizi</span>
-    <h2 id="servizi-title">Come posso aiutarti</h2>
-    <p>Ogni trattamento parte da una valutazione accurata e da obiettivi chiari, condivisi con te.</p>
-  </div>
-  <div class="grid services">
-    <a class="card service" href="blog/riabilitazione-post-chirurgica.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M20 5c-1 8-2 12 2 17s5 9 4 16" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><circle cx="22" cy="22" r="4.5" fill="#fff" opacity=".9"/><path d="M33 12v10M28 17h10" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg></div>
-      <div class="card-body">
-        <h3>Riabilitazione ortopedica e post-chirurgica</h3>
-        <p>Recupero dopo fratture, protesi e interventi a ginocchio, spalla, anca e colonna.</p>
-        <span class="read">Leggi l'approfondimento</span>
+        <div class="grid grid--4">
+          <article class="svc-card reveal">
+            <h3>Riabilitazione ortopedica e post-chirurgica</h3>
+            <div class="svc-card__media svc-card__media--a">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6M12 16v6M5 9l2 2-2 2M19 9l-2 2 2 2"/><circle cx="12" cy="12" r="3"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Recupero dopo fratture, protesi e interventi a ginocchio, spalla, anca e colonna.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Terapia manuale</h3>
+            <div class="svc-card__media svc-card__media--b">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a8 8 0 0 0 16 0v-2a2 2 0 0 0-4 0"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Tecniche manuali mirate per ridurre il dolore e migliorare la mobilità articolare.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Riabilitazione sportiva</h3>
+            <div class="svc-card__media svc-card__media--c">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m4 22 4-7 3 2v5M15 22l-2-6 3-3-1-5-4 2-3 3"/><path d="m16 8 2 3h3"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Dalla lesione al ritorno in campo, con un percorso graduale e test funzionali.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Trattamento del dolore cronico</h3>
+            <div class="svc-card__media svc-card__media--d">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Un approccio che unisce educazione, movimento e strategie per tornare alla tua vita.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Linfodrenaggio e linfedema</h3>
+            <div class="svc-card__media svc-card__media--b">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s-6 6.6-6 11.3a6 6 0 0 0 12 0c0-4.7-6-11.3-6-11.3z"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Linfodrenaggio manuale, bendaggio ed esercizi per gestire gonfiore e linfedema.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Rieducazione posturale</h3>
+            <div class="svc-card__media svc-card__media--c">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M12 6v8M8 22l4-8 4 8M6 10h12"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Esercizi su misura per muoverti meglio e sentirti più a tuo agio nel tuo corpo.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Fisioterapia a domicilio</h3>
+            <div class="svc-card__media svc-card__media--a">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Le stesse cure dello studio, direttamente a casa tua a Gravina e dintorni.</p>
+          </article>
+
+          <article class="svc-card reveal">
+            <h3>Fisioterapia geriatrica</h3>
+            <div class="svc-card__media svc-card__media--d">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="4" r="2"/><path d="M11 6v6l-3 10M11 12l3 4v6M8 9h6M17 12v10"/></svg>
+              <span class="iconbtn iconbtn--float" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+            </div>
+            <p>Equilibrio, forza e autonomia per la persona anziana, anche per prevenire le cadute.</p>
+          </article>
+        </div>
       </div>
-    </a>
-    <div class="card service">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 30V17a3 3 0 0 1 6 0v8M20 24V12a3 3 0 0 1 6 0v12M26 24V14a3 3 0 0 1 6 0v12M32 26v-6a3 3 0 0 1 6 0v8c0 7-5 13-12 13h-2c-6 0-10-4-12-9l-3-7a3 3 0 0 1 5-3l2 3" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="card-body">
-        <h3>Terapia manuale</h3>
-        <p>Tecniche manuali mirate, sempre insieme all'esercizio, per ridurre il dolore e ritrovare mobilità.</p>
+    </section>
+
+    <!-- ===================== CHI SONO (stile "Expert Physiotherapy" del riferimento) ===================== -->
+    <section class="section section--white" id="chi-sono" aria-labelledby="chi-sono-title">
+      <div class="container about">
+        <div class="about__media reveal">
+          <div class="about__frame">
+            <span class="about__blob" aria-hidden="true"></span>
+            <picture>
+              <source srcset="img/antonella-cutout-800.webp" type="image/webp">
+              <img src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista" loading="lazy">
+            </picture>
+          </div>
+          <!-- Badge scuro sovrapposto alla foto, come il "15+" del riferimento.
+               Se vuoi indicare gli anni di esperienza, scrivili al posto del testo. -->
+          <div class="about__badge">
+            <strong>Dott.ssa</strong>
+            <span>in Fisioterapia,<br>iscritta all'Albo</span>
+          </div>
+        </div>
+
+        <div class="about__text reveal">
+          <h2 id="chi-sono-title">Fisioterapia <span class="accent-deep">personalizzata</span> per una vita senza dolore</h2>
+          <p>Ciao, sono Antonella. Sono una fisioterapista e lavoro a Gravina in Puglia, nel mio studio e a domicilio. Credo in una fisioterapia che parta dall'ascolto: ogni persona ha una storia, degli obiettivi e dei tempi diversi.</p>
+          <p>Mi aggiorno costantemente sulla letteratura scientifica internazionale per offrirti trattamenti efficaci, senza promesse miracolose. Il mio obiettivo è aiutarti a capire cosa sta succedendo al tuo corpo e a tornare a fare ciò che ami.</p>
+          <ul class="about__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Valutazione iniziale approfondita per ogni percorso</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Approccio basato sulle evidenze scientifiche</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span>Trattamenti in studio e a domicilio</span></li>
+          </ul>
+          <a class="btn btn--pill btn--pill-dark" href="#prenota">Prenota una valutazione <span class="iconbtn iconbtn--light" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IL MIO APPROCCIO (step sfalsati come il riferimento) ===================== -->
+    <section class="section section--cream" id="approccio" aria-labelledby="approccio-title">
+      <div class="container approccio">
+        <div class="approccio__intro reveal">
+          <h2 id="approccio-title">Il mio percorso in <span class="accent-deep">4 passi</span></h2>
+          <p>Saprai sempre cosa stiamo facendo, perché lo facciamo e quali risultati aspettarti.</p>
+          <span class="sparkle" aria-hidden="true">✦</span>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step__head"><span class="step__num">01</span><h3>Valutazione iniziale</h3></div>
+            <p>Ascolto la tua storia e faccio un esame clinico accurato per capire l'origine del problema.</p>
+          </li>
+          <li class="step step--offset reveal">
+            <div class="step__head"><span class="step__num">02</span><h3>Piano personalizzato</h3></div>
+            <p>Costruiamo insieme obiettivi e tempi, con un piano basato sulle evidenze scientifiche.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__head"><span class="step__num">03</span><h3>Trattamento attivo</h3></div>
+            <p>Esercizio terapeutico e terapia manuale: sei tu il protagonista del tuo recupero.</p>
+          </li>
+          <li class="step step--offset reveal">
+            <div class="step__head"><span class="step__num">04</span><h3>Follow-up e prevenzione</h3></div>
+            <p>Verifichiamo i progressi e ti do gli strumenti per prevenire le ricadute nel tempo.</p>
+          </li>
+        </ol>
+
+        <div class="approccio__cta reveal">
+          <a class="btn btn--pill btn--pill-dark" href="#prenota">Inizia il tuo percorso <span class="iconbtn iconbtn--light" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOMICILIO (banner verde scuro) ===================== -->
+    <section class="section" id="domicilio" aria-labelledby="domicilio-title">
+      <div class="container">
+        <div class="home-visit reveal">
+          <div class="home-visit__text">
+            <h2 id="domicilio-title">Fisioterapia a domicilio a Gravina in Puglia e dintorni</h2>
+            <p>Se ti è difficile spostarti, dopo un intervento, per l'età o per il dolore, vengo io da te. Porto con me tutto il necessario per valutazione e trattamento.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Riabilitazione dopo protesi e interventi</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Persone anziane o con mobilità ridotta</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Linfodrenaggio e gestione del linfedema</li>
+            </ul>
+            <div class="home-visit__actions">
+              <a class="btn btn--light" href="#prenota">Richiedi un trattamento a domicilio</a>
+              <a class="btn btn--ghost-light" href="tel:[NUMERO]">Chiama ora</a>
+            </div>
+          </div>
+          <!-- SOSTITUIRE con: <img src="img/domicilio.jpg" alt="Fisioterapia a domicilio"> -->
+          <div class="photo-ph photo-ph--dark" role="img" aria-label="Fisioterapia a domicilio (segnaposto)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            <span>Foto in arrivo<br><small>img/domicilio.jpg</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ANTEPRIMA BLOG ===================== -->
+    <section class="section section--white" id="blog" aria-labelledby="blog-title">
+      <div class="container">
+        <div class="section-head section-head--row reveal">
+          <h2 id="blog-title">Capire il tuo dolore è il <span class="accent-deep">primo passo</span></h2>
+          <a class="btn btn--pill" href="blog/index.html">Tutti gli articoli <span class="iconbtn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+        </div>
+
+        <div class="grid grid--3">
+          <a class="post-card reveal" href="blog/mal-di-schiena.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M9 5h6M8.5 9h7M8.5 13h7M9 17h6"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Colonna</span>
+              <h3>Mal di schiena (lombalgia)</h3>
+              <p>Perché viene, quando preoccuparsi e cosa funziona davvero secondo la scienza.</p>
+            </div>
+          </a>
+          <a class="post-card reveal" href="blog/cervicalgia.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M9 5h6M8.5 9h7M8.5 13h7M9 17h6"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Colonna</span>
+              <h3>Cervicalgia: il dolore al collo</h3>
+              <p>Cause comuni, esercizi utili e i segnali da non sottovalutare.</p>
+            </div>
+          </a>
+          <a class="post-card reveal" href="blog/distorsione-caviglia.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v11l-4 5a2 2 0 0 0 1.6 3H19a2 2 0 0 0 2-2 3 3 0 0 0-3-3h-3l-2-3V2"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Arto inferiore</span>
+              <h3>Distorsione di caviglia</h3>
+              <p>Cosa fare nei primi giorni e come tornare a camminare e correre in sicurezza.</p>
+            </div>
+          </a>
+          <a class="post-card reveal" href="blog/lesioni-meniscali.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v8a3 3 0 0 0 6 0V2M9 22v-8a3 3 0 0 1 6 0v8"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Arto inferiore</span>
+              <h3>Lesioni meniscali</h3>
+              <p>Operare o no? Cosa dicono gli studi sul trattamento del menisco.</p>
+            </div>
+          </a>
+          <a class="post-card reveal" href="blog/lesioni-muscolari.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3c-2 4-2 14 0 18M17 3c2 4 2 14 0 18M7 12h10"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Altro</span>
+              <h3>Lesioni muscolari e stiramenti</h3>
+              <p>Dallo strappo al ritorno all'attività: tempi, esercizi ed errori da evitare.</p>
+            </div>
+          </a>
+          <a class="post-card reveal" href="blog/fascite-plantare.html">
+            <div class="post-card__img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v11l-4 5a2 2 0 0 0 1.6 3H19a2 2 0 0 0 2-2 3 3 0 0 0-3-3h-3l-2-3V2"/></svg></div>
+            <div class="post-card__body">
+              <span class="tag">Arto inferiore</span>
+              <h3>Fascite plantare</h3>
+              <p>Il dolore al tallone al mattino: cause, rimedi efficaci e tempi di recupero.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATTI ===================== -->
+    <section class="section section--cream" id="contatti" aria-labelledby="contatti-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="contatti-title">Vieni a trovarmi <span class="accent-deep">in studio</span></h2>
+          <p>Per informazioni o per prenotare una valutazione, chiamami o scrivimi.</p>
+        </div>
+
+        <div class="contact">
+          <div class="contact__info">
+            <div class="contact-item reveal">
+              <div class="contact-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><h3>Indirizzo</h3><p>[INDIRIZZO]<br>70024 Gravina in Puglia (BA)</p></div>
+            </div>
+            <div class="contact-item reveal">
+              <div class="contact-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div><h3>Telefono</h3><a href="tel:[NUMERO]">[NUMERO]</a></div>
+            </div>
+            <div class="contact-item reveal">
+              <div class="contact-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+              <div><h3>Email</h3><a href="mailto:[EMAIL]">[EMAIL]</a></div>
+            </div>
+            <div class="contact-item reveal">
+              <div class="contact-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div style="flex:1">
+                <h3>Orari</h3>
+                <!-- Sostituire [ORARI] con gli orari reali -->
+                <ul class="hours">
+                  <li><span>Lunedì – Venerdì</span><span>[ORARI]</span></li>
+                  <li><span>Sabato</span><span>[ORARI]</span></li>
+                  <li><span>Domenica</span><span>Chiuso</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mappa placeholder: sostituire con l'iframe di Google Maps dello studio -->
+          <div class="map-placeholder reveal" role="img" aria-label="Mappa dello studio (segnaposto)">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <strong>Studio Laddaga</strong>
+              <p>Gravina in Puglia (BA)<br>La mappa verrà inserita qui</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <span class="logo__mark" aria-hidden="true">
+              <img src="img/antonella-laddaga-icona.png" width="42" height="42" alt="" loading="lazy">
+            </span>
+            <span class="logo__name">Antonella Laddaga</span>
+          </a>
+          <p>Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio.</p>
+        </div>
+        <div>
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#approccio">Approccio</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="tel:[NUMERO]">[NUMERO]</a></li>
+            <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+            <li>[INDIRIZZO], Gravina in Puglia</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Seguimi</h4>
+          <ul>
+            <!-- Sostituire [PROFILO] con il nome utente Instagram -->
+            <li><a href="https://www.instagram.com/[PROFILO]/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="disclaimer">I contenuti di questo sito hanno scopo informativo e non sostituiscono una valutazione professionale.</p>
+        <p>© <span data-year>2026</span> Studio Laddaga – Dott.ssa Antonella Laddaga · P.IVA [PARTITA IVA]</p>
       </div>
     </div>
-    <a class="card service" href="blog/lesioni-muscolari.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="29" cy="9" r="4.5" fill="#fff" opacity=".9"/><path d="M27 16l-6 9 7 5-3 12M21 25l-9 4M27 16l6 7 7-1M28 30l8 9" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="card-body">
-        <h3>Riabilitazione sportiva</h3>
-        <p>Dalla lesione al ritorno in campo, con un percorso graduale e test funzionali.</p>
-        <span class="read">Leggi l'approfondimento</span>
-      </div>
-    </a>
-    <a class="card service" href="blog/dolore-cronico.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" stroke="#fff" stroke-width="3.2"/><path d="M24 14v10l7 5" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></svg></div>
-      <div class="card-body">
-        <h3>Trattamento del dolore cronico</h3>
-        <p>Educazione, movimento graduale e strategie concrete per tornare alla tua vita.</p>
-        <span class="read">Leggi l'approfondimento</span>
-      </div>
-    </a>
-    <a class="card service" href="blog/linfedema.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6s-12 13-12 22a12 12 0 0 0 24 0C36 19 24 6 24 6Z" fill="#fff" opacity=".9"/></svg></div>
-      <div class="card-body">
-        <h3>Linfodrenaggio e trattamento del linfedema</h3>
-        <p>Linfodrenaggio manuale, bendaggio ed esercizi per gestire il gonfiore nel tempo.</p>
-        <span class="read">Leggi l'approfondimento</span>
-      </div>
-    </a>
-    <a class="card service" href="blog/scoliosi-e-postura.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="8" r="4.5" fill="#fff" opacity=".9"/><path d="M24 14v14M12 19h24M24 28l-7 13M24 28l7 13" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg></div>
-      <div class="card-body">
-        <h3>Rieducazione posturale</h3>
-        <p>Esercizi su misura per muoverti meglio, senza inseguire una postura "perfetta".</p>
-        <span class="read">Leggi l'approfondimento</span>
-      </div>
-    </a>
-    <a class="card service" href="#domicilio">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 22 24 9l16 13v17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2Z" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/><path d="M19 41V29h10v12" stroke="#fff" stroke-width="3.2" stroke-linejoin="round" opacity=".85"/></svg></div>
-      <div class="card-body">
-        <h3>Fisioterapia a domicilio</h3>
-        <p>Le stesse cure dello studio, direttamente a casa tua a Gravina in Puglia e dintorni.</p>
-        <span class="read">Scopri come funziona</span>
-      </div>
-    </a>
-    <a class="card service" href="blog/osteoporosi-esercizio.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="21" cy="8" r="4.5" fill="#fff" opacity=".9"/><path d="M21 14v12l-5 15M21 26l6 6v9M15 19h11M34 22v19" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="card-body">
-        <h3>Fisioterapia geriatrica</h3>
-        <p>Forza, equilibrio e autonomia per la persona anziana, anche per prevenire le cadute.</p>
-        <span class="read">Leggi l'approfondimento</span>
-      </div>
-    </a>
-  </div>
-</section>
+  </footer>
 
-<!-- ============ IL MIO APPROCCIO ============ -->
-<section class="section section-dark" id="approccio" aria-labelledby="approccio-title">
-  <div class="section-head center">
-    <span class="eyebrow">Il mio approccio</span>
-    <h2 id="approccio-title">Un percorso chiaro, in 4 passi</h2>
-    <p>Saprai sempre cosa stiamo facendo, perché lo facciamo e cosa aspettarti.</p>
-  </div>
-  <ol class="steps">
-    <li class="step">
-      <span class="step-num">01</span>
-      <h3>Valutazione iniziale approfondita</h3>
-      <p>Ascolto la tua storia (anamnesi) e faccio un esame clinico accurato per capire da dove nasce il problema.</p>
-    </li>
-    <li class="step">
-      <span class="step-num">02</span>
-      <h3>Piano personalizzato basato sulle evidenze</h3>
-      <p>Definiamo insieme obiettivi e tempi, con un piano costruito sulle migliori evidenze scientifiche.</p>
-    </li>
-    <li class="step">
-      <span class="step-num">03</span>
-      <h3>Trattamento attivo</h3>
-      <p>Esercizio terapeutico e terapia manuale: sei tu il protagonista del tuo recupero.</p>
-    </li>
-    <li class="step">
-      <span class="step-num">04</span>
-      <h3>Follow-up e prevenzione delle ricadute</h3>
-      <p>Verifichiamo i progressi e ti do gli strumenti per stare bene anche dopo la fine del percorso.</p>
-    </li>
-  </ol>
-</section>
+  <!-- Bottone WhatsApp flottante -->
+  <a class="wa-float" href="https://wa.me/[WHATSAPP]" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+  </a>
 
-<!-- ============ CHI SONO ============ -->
-<section class="section section-white" id="chi-sono" aria-labelledby="chi-sono-title">
-  <div class="wrap about">
-    <!-- Sotto la piega: caricamento differito -->
-    <figure class="photo">
-      <img src="img/antonella.jpg" width="942" height="706" alt="Ritratto di Antonella Laddaga, fisioterapista a Gravina in Puglia" loading="lazy" decoding="async">
-    </figure>
-    <div>
-      <span class="eyebrow">Chi sono</span>
-      <h2 id="chi-sono-title">Ciao, sono Antonella</h2>
-      <!-- Testo modificabile liberamente (circa 90 parole) -->
-      <p>Sono una fisioterapista e lavoro a Gravina in Puglia, nel mio studio e a domicilio. Per me ogni percorso comincia dall'ascolto: prima di trattare un dolore voglio capire la persona che lo vive, le sue abitudini e i suoi obiettivi.</p>
-      <p>Lavoro seguendo le linee guida e la ricerca scientifica internazionale, che studio e aggiorno di continuo. Niente promesse miracolose: ti spiego con parole semplici cosa sta succedendo e costruiamo insieme un piano realistico, perché tu possa tornare a muoverti con fiducia.</p>
-      <p class="signature">Antonella Laddaga</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DOMICILIO ============ -->
-<section class="section" id="domicilio" aria-labelledby="domicilio-title">
-  <div class="wrap">
-    <div class="home-visit">
-      <span class="eyebrow">Servizio a domicilio</span>
-      <h2 id="domicilio-title">Fisioterapia a domicilio a Gravina in Puglia e dintorni</h2>
-      <p>Se spostarti è difficile, dopo un intervento, per l'età o per il dolore, vengo io da te. Porto con me il necessario per la valutazione e il trattamento.</p>
-      <ul>
-        <li>Riabilitazione dopo protesi e interventi chirurgici</li>
-        <li>Persone anziane o con mobilità ridotta</li>
-        <li>Linfodrenaggio e gestione del linfedema</li>
-      </ul>
-      <a class="btn" href="#contatti">Richiedi un trattamento a domicilio</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DAL BLOG ============ -->
-<!-- Card copiate da blog/index.html (stesso markup), con i link aggiornati al percorso blog/ -->
-<section class="section section-white" id="blog" aria-labelledby="blog-title">
-  <div class="section-head">
-    <span class="eyebrow">Dal blog</span>
-    <h2 id="blog-title">Capire il tuo dolore è il primo passo</h2>
-    <p>Guide semplici e affidabili sui disturbi più comuni, basate sulle migliori evidenze scientifiche.</p>
-  </div>
-  <div class="grid">
-    <a class="card" data-cat="colonna" href="blog/mal-di-schiena.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6v36" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="17" y="10" width="14" height="5" rx="2.5" fill="#fff" opacity=".9"/><rect x="16" y="19" width="16" height="5" rx="2.5" fill="#fff" opacity=".75"/><rect x="17" y="28" width="14" height="5" rx="2.5" fill="#fff" opacity=".9"/><rect x="18" y="37" width="12" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Colonna e postura</span>
-        <h3>Mal di schiena: fa male, ma quasi mai è grave</h3>
-        <p>Perché viene, quali falsi miti lasciarti alle spalle e perché il riposo assoluto è la scelta peggiore.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-    <a class="card" data-cat="colonna" href="blog/cervicalgia.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6v36" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="17" y="10" width="14" height="5" rx="2.5" fill="#fff" opacity=".9"/><rect x="16" y="19" width="16" height="5" rx="2.5" fill="#fff" opacity=".75"/><rect x="17" y="28" width="14" height="5" rx="2.5" fill="#fff" opacity=".9"/><rect x="18" y="37" width="12" height="5" rx="2.5" fill="#fff" opacity=".75"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Colonna e postura</span>
-        <h3>Dolore al collo: quando la "cervicale" si fa sentire</h3>
-        <p>Collo rigido, dolore che sale verso la testa o scende verso la spalla: da dove nasce e come si tratta.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-    <a class="card" data-cat="arto-inferiore" href="blog/distorsione-caviglia.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M20 5c-1 8-2 12 2 17s5 9 4 16" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M26 38h9" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".8"/><circle cx="22" cy="22" r="4.5" fill="#fff" opacity=".9"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Anca, ginocchio e piede</span>
-        <h3>Distorsione di caviglia: l'infortunio che tutti sottovalutano</h3>
-        <p>Il piede che "gira": cosa fare nelle prime 48 ore, quando serve la radiografia e perché i primi 6 mesi decidono tutto.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-    <a class="card" data-cat="arto-superiore" href="blog/dolore-alla-spalla.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="15" cy="13" r="6" fill="#fff" opacity=".9"/><path d="M15 19c0 9 4 13 12 16l8 3" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M27 35l-5 7" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".75"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Spalla, gomito e mano</span>
-        <h3>Dolore alla spalla: quando alzare il braccio diventa un problema</h3>
-        <p>Il dolore quando alzi il braccio: perché "impingement" è un nome superato e cosa funziona davvero.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-    <a class="card" data-cat="arto-inferiore" href="blog/artrosi-ginocchio.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M20 5c-1 8-2 12 2 17s5 9 4 16" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M26 38h9" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".8"/><circle cx="22" cy="22" r="4.5" fill="#fff" opacity=".9"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Anca, ginocchio e piede</span>
-        <h3>Artrosi del ginocchio: il movimento è la medicina</h3>
-        <p>Rigidità, dolore sotto sforzo e scrosci: come l'esercizio cambia la storia della gonartrosi.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-    <a class="card" data-cat="altro" href="blog/linfedema.html">
-      <div class="card-band"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 40s-14-8.5-14-18a8 8 0 0 1 14-5.2A8 8 0 0 1 38 22c0 9.5-14 18-14 18Z" fill="#fff" opacity=".9"/></svg></div>
-      <div class="card-body">
-        <span class="cat">Benessere e riabilitazione</span>
-        <h3>Linfedema: un gonfiore che ha bisogno di mani esperte</h3>
-        <p>Gonfiore persistente di braccio o gamba: come riconoscerlo presto e in cosa consiste la terapia decongestiva completa.</p>
-        <span class="read">Leggi l'articolo</span>
-      </div>
-    </a>
-  </div>
-  <p class="more"><a class="btn btn-ghost" href="blog/index.html">Vedi tutti gli articoli</a></p>
-</section>
-
-<!-- ============ CONTATTI ============ -->
-<section class="section" id="contatti" aria-labelledby="contatti-title">
-  <div class="section-head">
-    <span class="eyebrow">Contatti</span>
-    <h2 id="contatti-title">Prenota una valutazione</h2>
-    <p>Chiamami, scrivimi su WhatsApp o compila il <a href="#prenota">modulo in alto</a>: ti risponderò al più presto.</p>
-  </div>
-  <div class="wrap">
-    <div class="contact">
-      <div class="contact-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <h3>Telefono e WhatsApp</h3>
-        <p><a href="tel:[NUMERO]">[NUMERO]</a></p>
-        <p><a href="https://wa.me/[NUMERO]" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></p>
-      </div>
-      <div class="contact-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
-        <h3>Email</h3>
-        <p><a href="mailto:[EMAIL]">[EMAIL]</a></p>
-      </div>
-      <div class="contact-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Studio</h3>
-        <p>[INDIRIZZO]<br>70024 Gravina in Puglia (BA)</p>
-        <!-- Link a Google Maps: sostituire [INDIRIZZO] nella query (spazi come "+") -->
-        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=[INDIRIZZO]+Gravina+in+Puglia" target="_blank" rel="noopener">Apri in Google Maps</a></p>
-      </div>
-      <div class="contact-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Orari</h3>
-        <!-- Sostituire [ORARI] con gli orari reali -->
-        <ul class="hours">
-          <li><span>Lunedì – Venerdì</span><span>[ORARI]</span></li>
-          <li><span>Sabato</span><span>[ORARI]</span></li>
-        </ul>
-        <p class="form-note" style="margin-top:.5rem">A domicilio su appuntamento.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============ FOOTER (stesso markup del blog, con i dati dello studio) ============ -->
-<footer class="site-footer">
-  <!-- Dati dello studio: sostituire i segnaposto tra parentesi quadre -->
-  <div class="wrap">
-    <div>
-      <a class="brand" href="index.html"><img src="img/antonella-laddaga-simbolo.png" width="40" height="40" alt="Antonella Laddaga – Studio di Fisioterapia" loading="lazy"><span>Antonella Laddaga</span></a>
-      <p>Studio di Fisioterapia.<br>Gravina in Puglia (BA) — in studio e a domicilio.</p>
-      <!-- Instagram: se non c'è un profilo, eliminare questa riga -->
-      <p><a href="https://www.instagram.com/[PROFILO]/" target="_blank" rel="noopener">Instagram</a></p>
-    </div>
-    <div>
-      <h4>Contatti</h4>
-      <p>Telefono: <a href="tel:[NUMERO]">[NUMERO]</a><br>Email: <a href="mailto:[EMAIL]">[EMAIL]</a><br>WhatsApp: <a href="https://wa.me/[NUMERO]" target="_blank" rel="noopener">scrivimi</a></p>
-    </div>
-    <div>
-      <h4>Dove</h4>
-      <p>[INDIRIZZO]<br>Gravina in Puglia (BA)<br>Orari: [ORARI]</p>
-    </div>
-  </div>
-  <div class="legal">I contenuti di questo sito hanno scopo puramente informativo e non sostituiscono in alcun modo la valutazione, la diagnosi o il trattamento di un medico o di un professionista sanitario. © Antonella Laddaga – Studio di Fisioterapia · P.IVA [PARTITA IVA]</div>
-</footer>
-<!-- Bottone WhatsApp flottante: [NUMERO] in formato 39XXXXXXXXXX -->
-<a class="wa-float" href="https://wa.me/[NUMERO]" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2A11.8 11.8 0 0 0 12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
-</a>
-<script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,186 +1,696 @@
 /* ============================================================
-   Studio Laddaga — Stili della home
-   Va caricato DOPO blog/assets/blog.css, di cui riusa tutti i
-   token (:root), header, footer, bottoni e card. Qui ci sono
-   solo le regole che il blog non ha: hero con form, sezioni,
-   step, "chi sono", box domicilio e contatti.
+   STUDIO LADDAGA – Foglio di stile
+   Palette e layout ricalcano il design di riferimento:
+   hero verde scuro, nav a pillole, form bianco sovrapposto,
+   sezioni crema con card bianche, accenti verde salvia.
    ============================================================ */
 
-/* evita lo scroll orizzontale causato dalle forme decorative dell'hero
-   (clip, a differenza di hidden, non rompe l'header sticky) */
-body{overflow-x:clip}
+:root{
+  /* Colori */
+  --green-950:#3A2564;        /* footer / tinte più scure */
+  --green-900:#5B3A8E;        /* verde scuro principale (hero) */
+  --green-800:#6B49A1;        /* pillole, hover */
+  --accent:#C3B3DF;           /* verde chiaro (parole evidenziate su scuro, logo) */
+  --accent-deep:#7557A8;      /* parole evidenziate su chiaro */
+  --sage:#D6CBEA;             /* decorazioni */
+  --cream:#F2F0EB;            /* sfondo sezioni chiare */
+  --white:#FFFFFF;
+  --ink:#22302D;              /* testo principale */
+  --muted:#5F5A6B;            /* testo secondario */
+  --line:#E6E1EF;             /* bordi sottili */
+  --wa:#25D366;
 
-/* ---------- Struttura sezioni ---------- */
-.section{padding:4rem 0}
-.section-white{background:#fff;border-block:1px solid var(--lilac-soft)}
-.section-dark{background:var(--lilac-deep);color:#fff}
-.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-
-.section-head{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-.section-head.center{text-align:center}
-.section-head h2{
-  font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);
-  line-height:1.2;margin:0 0 .6rem;color:var(--lilac-deep);
+  /* Forma e spazi */
+  --radius-lg:18px;
+  --radius-md:12px;
+  --radius-sm:9px;
+  --container:1180px;
+  --shadow:0 10px 30px rgba(42,28,70,.10);
 }
-.section-head p{margin:0;max-width:60ch;color:var(--ink-soft)}
-.section-head.center p{margin:0 auto}
-.section-dark .section-head h2{color:#fff}
-.section-dark .section-head p{color:var(--lilac-mist)}
 
-/* etichetta piccola sopra i titoli, stessa resa di .card .cat */
-.eyebrow{display:block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lilac);margin-bottom:.6rem}
-.section-dark .eyebrow{color:var(--lilac-mist)}
-
-/* ---------- Hero con form di prenotazione ---------- */
-.home-hero{
-  color:#fff;position:relative;overflow:hidden;
-  background:linear-gradient(140deg,var(--lilac-deep),var(--lilac) 70%,var(--accent));
-  padding:3.2rem 0 3.5rem;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.6;
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
 }
-.home-hero::after{ /* stesso cerchio luminoso degli hero del blog */
-  content:"";position:absolute;right:-110px;top:-60px;width:380px;height:380px;
-  background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.22),rgba(255,255,255,0) 62%);
-  border-radius:50%;pointer-events:none;
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.15;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em}
+ul{margin:0;padding:0;list-style:none}
+svg{display:block}
+
+.container{max-width:var(--container);margin-inline:auto;padding-inline:22px}
+
+/* Parole evidenziate nei titoli */
+.accent{color:var(--accent)}
+.accent-deep{color:var(--accent-deep)}
+
+/* Link di servizio per l'accessibilità */
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:100;
+  background:var(--green-900);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;
 }
-.home-hero .wrap{position:relative;z-index:1;display:grid;gap:2.2rem}
-.home-hero h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(2.3rem,6vw,3.6rem);line-height:1.1;margin:0 0 1rem}
-.home-hero h1 em{font-style:italic;color:var(--lilac-mist)}
-.home-hero .lede{font-size:1.15rem;max-width:44ch;margin:0 0 1.6rem;opacity:.94}
-.home-hero .cat-tag{margin-bottom:1.1rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem}
-.hero-actions .btn{background:#fff;color:var(--lilac-deep)}
-.hero-actions .btn:hover{background:var(--lilac-soft)}
-.hero-actions .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
-.hero-actions .btn-ghost:hover{background:rgba(255,255,255,.12)}
-.hero-points{list-style:none;padding:0;margin:1.8rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
-.hero-points li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.3rem .9rem;font-size:.88rem}
+.skip-link:focus{left:0}
 
-/* foto scontornata dentro un arco con gradiente lilla tenue */
-.hero-photo{
-  position:relative;margin:0 auto;width:100%;max-width:300px;aspect-ratio:5/6;overflow:hidden;
-  border-radius:999px 999px var(--radius) var(--radius);
-  background:radial-gradient(circle at 50% 38%,#F3EFF8 0%,var(--lilac-mist) 48%,#9F88CB 100%);
-  box-shadow:0 18px 44px rgba(var(--shadow),.35);
+:focus-visible{outline:3px solid var(--accent-deep);outline-offset:2px}
+
+/* ============================================================
+   BOTTONI
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font:inherit;font-weight:600;font-size:15px;
+  padding:13px 22px;border-radius:var(--radius-sm);
+  border:1px solid transparent;cursor:pointer;text-decoration:none;
+  transition:background .2s,color .2s,border-color .2s;
 }
-.hero-photo img{position:absolute;left:0;bottom:0;width:100%;height:92%;object-fit:cover;object-position:50% 0}
+.btn--primary{background:var(--green-900);color:#fff}
+.btn--primary:hover{background:var(--green-800)}
+.btn--light{background:#fff;color:var(--green-900)}
+.btn--light:hover{background:var(--cream)}
+.btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn--ghost-light:hover{border-color:#fff}
+.btn--whatsapp{background:var(--wa);color:#fff}
+.btn--whatsapp:hover{background:#1fba58}
+.btn--whatsapp svg{width:19px;height:19px}
+.btn--block{width:100%}
 
-/* filigrana: simbolo del logo a bassissima opacità */
-.hero-watermark{
-  position:absolute;z-index:0;left:-70px;top:30px;width:420px;height:auto;opacity:.045;pointer-events:none;
-  fill:none;stroke:#fff;stroke-width:9;stroke-linecap:round;
+/* Pillola con quadratino-freccia (stile "All Services ↗" del riferimento) */
+.btn--pill{
+  background:#fff;color:var(--ink);
+  border:1px solid var(--line);
+  border-radius:999px;padding:9px 9px 9px 20px;font-size:14.5px;
 }
-.hero-watermark circle{fill:#fff;stroke:none}
+.btn--pill:hover{border-color:var(--accent-deep)}
+.btn--pill-dark{background:var(--green-900);color:#fff;border-color:var(--green-900)}
+.btn--pill-dark:hover{background:var(--green-800)}
 
-/* card bianca del form */
-.booking{
-  background:#fff;color:var(--ink);border-radius:var(--radius);
-  padding:1.6rem 1.4rem;box-shadow:0 24px 60px rgba(var(--shadow),.25);
+.iconbtn{
+  width:30px;height:30px;flex:0 0 auto;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--green-900);color:#fff;border-radius:8px;
 }
-.booking h2{font-family:"Fraunces",serif;font-weight:600;font-size:1.5rem;margin:0 0 .3rem;color:var(--lilac-deep)}
-.booking > p{margin:0 0 1.2rem;font-size:.95rem;color:var(--ink-soft)}
+.iconbtn svg{width:14px;height:14px}
+.iconbtn--light{background:var(--accent);color:var(--green-900)}
+.iconbtn--float{position:absolute;right:10px;bottom:10px}
 
-/* ---------- Form ---------- */
-.form{display:grid;gap:.85rem}
-.field{display:grid;gap:.3rem}
-.field label{font-size:.88rem;font-weight:600;color:var(--lilac-deep)}
-.field label .req{color:var(--lilac)}
-.field input,.field textarea{
-  width:100%;font:inherit;font-size:1rem;color:var(--ink);
-  background:var(--bg);border:1.5px solid var(--lilac-soft);border-radius:12px;padding:.7rem .85rem;
+/* ============================================================
+   HEADER (dentro l'hero verde)
+   ============================================================ */
+.site-header{padding-top:22px}
+.site-header__inner{display:flex;align-items:center;gap:24px}
+
+.logo{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:700}
+.logo__mark{
+  width:42px;height:42px;border-radius:12px;overflow:hidden;
+  background:#F6F5F1;color:var(--green-900);
+  display:inline-flex;align-items:center;justify-content:center;
 }
-.field textarea{min-height:96px;resize:vertical}
-.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
-.btn-block{display:flex;width:100%;text-align:center;padding:.8rem 1.15rem;font-size:1rem;min-height:48px}
-.btn-wa{background:#25D366;color:#0B3D20;gap:.5rem}
-.btn-wa:hover{background:#1fbd5a}
-.btn-wa svg{width:20px;height:20px}
-.or{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--ink-soft)}
-.or::before,.or::after{content:"";flex:1;height:1px;background:var(--lilac-soft)}
-.form-row{display:grid;gap:.85rem}
-.form-actions{display:grid;gap:.85rem}
-.form-status{margin:0;font-size:.92rem;min-height:1.2em}
-.form-status.ok{color:var(--ok)}
-.form-status.err{color:var(--warn-edge)}
-.form-note{margin:0;font-size:.8rem;color:var(--ink-soft)}
+.logo__mark svg{width:22px;height:22px}
+.logo__mark img{width:100%;height:100%;object-fit:cover}
+.logo__name{color:#fff;font-size:17px;letter-spacing:-.01em}
 
-/* ---------- Card della home (servizi e anteprima blog) ---------- */
-/* Le card riusano .card / .card-band / .card-body del blog.
-   In home il titolo della card è un h3 (sotto l'h2 di sezione). */
-.card h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.12rem;line-height:1.3;margin:0}
-.services{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))} /* 8 servizi: 4 colonne su desktop */
-.service .card-band{background:var(--band-1)}
-.service:nth-child(4n+2) .card-band{background:var(--band-2)}
-.service:nth-child(4n+3) .card-band{background:var(--band-3)}
-.service:nth-child(4n+4) .card-band{background:var(--band-4)}
-div.card:hover{box-shadow:none;border-color:var(--lilac-soft)} /* le card senza link non "reagiscono" */
-.more{text-align:center;margin:-1.5rem 0 0}
-
-/* ---------- Il mio approccio: 4 step ---------- */
-.steps{
-  list-style:none;max-width:1080px;margin:2rem auto 0;padding:0 1.25rem;
-  display:grid;gap:1.15rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+.nav{display:flex;align-items:center;gap:8px;margin-left:6px}
+.nav__pill{
+  display:inline-flex;align-items:center;gap:8px;
+  color:#fff;text-decoration:none;font-size:14.5px;font-weight:500;
+  padding:9px 16px;border-radius:9px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.08);
+  transition:background .2s;
 }
-.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:1.4rem 1.3rem}
-.step-num{font-family:"Fraunces",serif;font-style:italic;font-size:2.4rem;line-height:1;color:var(--lilac-mist);display:block;margin-bottom:.8rem}
-.step h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.15rem;margin:0 0 .4rem}
-.step p{margin:0;font-size:.95rem;color:var(--lilac-mist)}
+.nav__pill:hover{background:rgba(255,255,255,.14)}
+.nav__pill.is-active{background:rgba(255,255,255,.12)}
+.nav__dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-/* ---------- Chi sono ---------- */
-.about{display:grid;gap:2rem;align-items:center}
-.photo{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;width:100%;background:var(--lilac-soft)}
-.photo img{display:block;width:100%;height:100%;object-fit:cover}
-.about h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;margin:0 0 .8rem;color:var(--lilac-deep)}
-.about p{color:var(--ink-soft)}
-.signature{font-family:"Fraunces",serif;font-style:italic;font-size:1.35rem;color:var(--lilac)!important;margin:1.2rem 0 0}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:14px}
+.header-phone{
+  display:inline-flex;align-items:center;gap:10px;
+  color:#fff;text-decoration:none;font-weight:700;font-size:17px;letter-spacing:.01em;
+}
+.header-phone__icon{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:inline-flex;align-items:center;justify-content:center;color:var(--accent);
+}
+.header-phone__icon svg{width:16px;height:16px}
 
-/* ---------- Box domicilio ---------- */
+.nav-toggle{
+  display:none;background:rgba(255,255,255,.1);border:0;color:#fff;
+  width:42px;height:42px;border-radius:10px;cursor:pointer;
+  align-items:center;justify-content:center;
+}
+.nav-toggle svg{width:22px;height:22px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{background:var(--cream)}
+.hero__green{
+  position:relative;overflow:hidden;
+  background:var(--green-900);
+  /* spazio sotto: la parte alta del form bianco "entra" qui dentro */
+  padding-bottom:300px;
+}
+
+.hero__top{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:minmax(0,420px) 1fr;
+  gap:40px;align-items:start;
+  padding-top:72px;
+}
+.hero__lead{
+  color:rgba(255,255,255,.82);font-size:15.5px;max-width:40ch;margin:10px 0 0;
+}
+.hero__title{
+  color:#fff;margin:0;
+  font-size:clamp(40px,5.2vw,64px);
+  font-weight:700;letter-spacing:-.02em;line-height:1.08;
+  text-align:left;
+}
+
+.hero__watermark{
+  position:absolute;right:-40px;bottom:-60px;z-index:0;
+  color:rgba(255,255,255,.05);
+  pointer-events:none;
+}
+.hero__watermark svg{width:420px;height:420px}
+.hero__watermark img{width:360px;height:auto;opacity:.10}
+
+/* Parte bassa: form + foto */
+.hero__bottom{
+  position:relative;
+  display:grid;grid-template-columns:400px 1fr;gap:0;
+  margin-top:-300px;       /* risale dentro il blocco verde */
+  padding-bottom:0;
+}
+
+.booking-card{
+  position:relative;z-index:2;
+  background:#fff;border-radius:var(--radius-lg);
+  padding:26px 26px 22px;
+  box-shadow:var(--shadow);
+  margin-top:-70px;        /* il form parte già nella zona del titolo */
+}
+
+.hero__photo{
+  position:relative;z-index:1;
+  min-height:560px;
+  margin-left:-28px;       /* la foto scorre leggermente sotto il form */
+}
+.hero__photo-img,
+.hero__photo .photo-ph{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  border-radius:0 0 var(--radius-lg) var(--radius-lg);
+}
+.hero__photo-img{object-position:center 22%}
+
+/* Composizione con figura scontornata nell'hero */
+.hero__photo--cutout{
+  background:linear-gradient(165deg,#EDE7F6 0%,#D6CBEA 100%);
+  border-radius:0 0 var(--radius-lg) var(--radius-lg);
+  overflow:hidden;
+}
+.hero__blob{
+  position:absolute;left:54%;bottom:-26%;transform:translateX(-50%);
+  width:min(620px,86%);aspect-ratio:1;border-radius:50%;
+  background:rgba(255,255,255,.45);
+}
+.hero__cutout{
+  position:absolute;left:54%;bottom:0;transform:translateX(-50%);
+  height:94%;width:auto;max-width:none;
+  filter:drop-shadow(0 18px 30px rgba(42,28,70,.22));
+}
+
+/* Card con figura scontornata nella sezione Chi sono */
+.about__frame{
+  position:relative;aspect-ratio:4/5;overflow:hidden;
+  border-radius:var(--radius-lg);
+  background:linear-gradient(165deg,#EDE7F6 0%,#CBBCE4 100%);
+}
+.about__blob{
+  position:absolute;left:50%;bottom:-24%;transform:translateX(-50%);
+  width:92%;aspect-ratio:1;border-radius:50%;
+  background:rgba(255,255,255,.45);
+}
+.about__frame img{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  height:95%;width:auto;max-width:none;object-fit:contain;
+  filter:drop-shadow(0 14px 24px rgba(42,28,70,.2));
+}
+
+/* ============================================================
+   PAGINE INTERNE / BLOG
+   ============================================================ */
+.page-hero{background:var(--green-900);color:#fff;padding-bottom:56px}
+.page-hero__inner{padding-top:52px;max-width:760px}
+.page-hero h1{color:#fff;font-size:clamp(30px,4vw,46px);letter-spacing:-.02em;margin:10px 0 12px}
+.page-hero p{color:rgba(255,255,255,.82);margin:0;max-width:60ch}
+.page-hero .tag{background:rgba(255,255,255,.12);color:var(--accent);margin:0}
+
+.article{max-width:760px;margin-inline:auto;padding:56px 22px 72px}
+.article h2{font-size:25px;margin-top:1.8em;letter-spacing:-.01em}
+.article h3{font-size:19px;margin-top:1.5em}
+.article p,.article li{color:#39433A;font-size:16.5px;line-height:1.75}
+.article ul{list-style:disc;padding-left:1.3em;margin-bottom:1em;display:block}
+.article ul li{margin-bottom:.4em}
+.article a{color:var(--accent-deep)}
+.article .avviso{
+  background:var(--cream);border-left:4px solid var(--accent-deep);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:16px 18px;font-size:15px;color:var(--muted);
+}
+
+/* Riquadro "prenota" alla fine degli articoli */
+.article-cta{
+  background:var(--green-900);color:#fff;border-radius:var(--radius-lg);
+  padding:32px;margin-top:48px;text-align:center;
+}
+.article-cta h2{margin:0 0 8px;font-size:24px;color:#fff}
+.article-cta p{color:rgba(255,255,255,.82);margin:0 0 20px}
+
+/* Badge "pazienti" in basso a destra sulla foto */
+.trust-badge{
+  position:absolute;right:18px;bottom:18px;z-index:2;
+  background:#fff;border-radius:14px;box-shadow:var(--shadow);
+  padding:12px 16px;display:flex;align-items:center;gap:12px;
+}
+.trust-badge p{margin:0;font-size:13px;font-weight:600;line-height:1.35}
+.trust-badge__avatars{display:flex}
+.trust-badge__avatars span{
+  width:30px;height:30px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:var(--green-900);
+  background:var(--sage);border:2px solid #fff;
+}
+.trust-badge__avatars span:nth-child(2){background:var(--accent);margin-left:-9px}
+.trust-badge__avatars span:nth-child(3){background:#E6DFF3;margin-left:-9px}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form__field{margin-bottom:13px}
+.form__field label{
+  display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;
+}
+.req{color:var(--accent-deep)}
+.form__field input,
+.form__field textarea{
+  width:100%;font:inherit;font-size:14.5px;color:var(--ink);
+  background:#F6F5F2;border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:11px 13px;
+}
+.form__field input::placeholder,
+.form__field textarea::placeholder{color:#9B94A8}
+.form__field input:focus,
+.form__field textarea:focus{outline:2px solid var(--accent-deep);outline-offset:0;border-color:transparent}
+.form__field textarea{min-height:96px;resize:vertical}
+
+.form__date{position:relative}
+.form__date input{padding-right:42px}
+.form__date input::-webkit-calendar-picker-indicator{
+  opacity:0;position:absolute;right:6px;width:30px;height:30px;cursor:pointer;
+}
+.form__date-icon{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  color:var(--muted);pointer-events:none;
+}
+.form__date-icon svg{width:18px;height:18px}
+
+.form__status{min-height:1.2em;margin:10px 0 0;font-size:14px;font-weight:600}
+.form__status.is-ok{color:var(--accent-deep)}
+.form__status.is-error{color:#B4452F}
+
+.form__divider{
+  display:flex;align-items:center;gap:12px;
+  color:var(--muted);font-size:13px;margin:14px 0;
+}
+.form__divider::before,
+.form__divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.form__privacy{font-size:12px;color:var(--muted);margin:10px 0 0;text-align:center}
+
+/* ============================================================
+   SEZIONI
+   ============================================================ */
+.section{padding:84px 0}
+.section--cream{background:var(--cream)}
+.section--white{background:#fff}
+
+.section-head{max-width:640px;margin-bottom:42px}
+.section-head h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.02em}
+.section-head p{color:var(--muted)}
+.section-head--row{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  max-width:none;
+}
+.section-head--row h2{margin:0}
+
+.grid{display:grid;gap:22px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+
+/* ============================================================
+   CARD SERVIZI (titolo sopra, immagine, testo sotto — come il riferimento)
+   ============================================================ */
+.svc-card{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:20px;box-shadow:0 4px 16px rgba(42,28,70,.05);
+  display:flex;flex-direction:column;
+}
+.section--white .svc-card{border:1px solid var(--line);box-shadow:none}
+.svc-card h3{font-size:17px;margin-bottom:14px;min-height:2.4em}
+.svc-card__media{
+  position:relative;border-radius:var(--radius-md);
+  height:150px;margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--green-900);
+}
+.svc-card__media svg{width:48px;height:48px;opacity:.55}
+.svc-card__media--a{background:#E3DBF2}
+.svc-card__media--b{background:#EFEAF8}
+.svc-card__media--c{background:#D8CDEC}
+.svc-card__media--d{background:#E9E2F4}
+.svc-card p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* ============================================================
+   CHI SONO
+   ============================================================ */
+.about{
+  display:grid;grid-template-columns:400px 1fr;gap:64px;align-items:center;
+}
+.about__media{position:relative}
+.about__badge{
+  position:absolute;left:-18px;bottom:26px;
+  background:var(--green-900);color:#fff;
+  border-radius:var(--radius-md);padding:14px 18px;
+  box-shadow:var(--shadow);line-height:1.25;
+}
+.about__badge strong{display:block;font-size:22px;letter-spacing:-.01em}
+.about__badge span{font-size:12.5px;color:rgba(255,255,255,.8)}
+
+.about__text h2{font-size:clamp(28px,3.2vw,38px);letter-spacing:-.02em}
+.about__text p{color:var(--muted)}
+.about__list{margin:18px 0 26px;display:grid;gap:11px}
+.about__list li{display:flex;gap:11px;align-items:flex-start;font-weight:500;font-size:15px}
+.about__list svg{width:21px;height:21px;color:var(--accent-deep);flex:0 0 auto;margin-top:1px}
+
+/* ============================================================
+   APPROCCIO (step sfalsati)
+   ============================================================ */
+.approccio{
+  display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;
+}
+.approccio__intro{position:relative}
+.approccio__intro h2{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.02em}
+.approccio__intro p{color:var(--muted)}
+.sparkle{
+  display:block;margin-top:26px;
+  color:var(--sage);font-size:64px;line-height:1;
+}
+
+.steps{display:grid;gap:22px;counter-reset:step}
+.step{
+  background:#fff;border-radius:var(--radius-lg);
+  padding:22px 24px;box-shadow:0 4px 16px rgba(42,28,70,.05);
+  max-width:520px;
+}
+.step--offset{margin-left:min(18%,110px)}
+.step__head{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.step__num{
+  flex:0 0 auto;
+  background:var(--cream);color:var(--green-900);
+  font-weight:700;font-size:14px;
+  padding:6px 11px;border-radius:8px;border:1px solid var(--line);
+}
+.step h3{margin:0;font-size:18px}
+.step p{margin:0;color:var(--muted);font-size:14.5px}
+
+.approccio__cta{grid-column:1/-1;display:flex;justify-content:flex-end}
+
+/* ============================================================
+   DOMICILIO (banner verde scuro)
+   ============================================================ */
 .home-visit{
-  color:#fff;border-radius:var(--radius);padding:2.2rem 1.5rem;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,var(--lilac),var(--accent));
-  box-shadow:0 18px 44px rgba(var(--shadow),.18);
+  background:var(--green-900);color:#fff;
+  border-radius:var(--radius-lg);
+  display:grid;grid-template-columns:1.2fr .8fr;gap:40px;
+  padding:48px;overflow:hidden;
 }
-.home-visit::after{content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.1)}
-.home-visit > *{position:relative;z-index:1}
-.home-visit h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.2;margin:0 0 .7rem}
-.home-visit p{max-width:60ch;opacity:.94;margin:0 0 1rem}
-.home-visit ul{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.4rem}
-.home-visit li{padding-left:1.6rem;position:relative}
-.home-visit li::before{content:"✓";position:absolute;left:0;font-weight:700}
-.home-visit .btn{background:#fff;color:var(--lilac-deep)}
-.home-visit .btn:hover{background:var(--lilac-soft)}
-.home-visit .eyebrow{color:#fff;opacity:.85}
+.home-visit__text h2{font-size:clamp(24px,2.8vw,34px);letter-spacing:-.02em}
+.home-visit__text p{color:rgba(255,255,255,.82)}
+.home-visit__text ul{display:grid;gap:10px;margin:20px 0 28px}
+.home-visit__text li{display:flex;gap:10px;align-items:center;font-weight:500}
+.home-visit__text li svg{width:19px;height:19px;color:var(--accent);flex:0 0 auto}
+.home-visit__actions{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ---------- Contatti ---------- */
-.contact{display:grid;gap:1.15rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:2rem}
-.contact-item{background:#fff;border:1px solid var(--lilac-soft);border-radius:var(--radius);padding:1.3rem 1.3rem 1.4rem}
-.contact-item .icon{width:44px;height:44px;border-radius:12px;background:var(--lilac-soft);color:var(--lilac);display:grid;place-items:center;margin-bottom:.8rem}
-.contact-item .icon svg{width:22px;height:22px}
-.contact-item h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .3rem}
-.contact-item p{margin:0}
-.contact-item a{color:var(--lilac-deep);font-weight:600;display:inline-flex;align-items:center;min-height:44px}
-.contact-item a:hover{color:var(--lilac)}
-.hours{list-style:none;padding:0;margin:0;font-size:.95rem}
-.hours li{display:flex;flex-wrap:wrap;justify-content:space-between;column-gap:1rem}
+/* ============================================================
+   BLOG
+   ============================================================ */
+.post-card{
+  display:flex;flex-direction:column;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  overflow:hidden;text-decoration:none;
+  transition:box-shadow .2s,transform .2s;
+}
+.post-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.post-card__img{
+  height:150px;background:#EAE4F4;
+  display:flex;align-items:center;justify-content:center;color:var(--green-900);
+}
+.post-card__img svg{width:44px;height:44px;opacity:.5}
+.post-card__body{padding:18px 20px 20px}
+.tag{
+  display:inline-block;font-size:12px;font-weight:600;
+  color:var(--accent-deep);background:var(--cream);
+  padding:4px 10px;border-radius:999px;margin-bottom:10px;
+}
+.post-card h3{font-size:17px;margin-bottom:6px}
+.post-card p{margin:0;color:var(--muted);font-size:14px}
 
-/* ---------- Tablet ---------- */
-@media(min-width:700px){
-  .form-row{grid-template-columns:repeat(3,1fr)}
+/* ============================================================
+   CONTATTI
+   ============================================================ */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.contact__info{display:grid;gap:14px}
+.contact-item{
+  background:#fff;border-radius:var(--radius-md);
+  padding:18px 20px;display:flex;gap:16px;align-items:flex-start;
+  box-shadow:0 4px 16px rgba(42,28,70,.05);
+}
+.contact-item__icon{
+  flex:0 0 auto;width:44px;height:44px;border-radius:11px;
+  background:var(--cream);color:var(--green-900);
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-item__icon svg{width:21px;height:21px}
+.contact-item h3{font-size:16px;margin-bottom:3px}
+.contact-item p,.contact-item a{color:var(--muted);font-size:14.5px;margin:0;text-decoration:none}
+.contact-item a:hover{color:var(--green-900)}
+
+.hours{display:grid;gap:5px;font-size:14.5px;color:var(--muted)}
+.hours li{display:flex;justify-content:space-between;gap:16px}
+
+.map-placeholder{
+  min-height:420px;border-radius:var(--radius-lg);
+  background:#E3DCF0;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:var(--green-900);
+}
+.map-placeholder svg{width:40px;height:40px;margin-inline:auto;margin-bottom:8px;opacity:.6}
+.map-placeholder p{color:var(--muted);font-size:14px;margin:4px 0 0}
+
+/* ============================================================
+   SEGNAPOSTO FOTO
+   ============================================================ */
+.photo-ph{
+  background:linear-gradient(160deg,#E9E3F4,#CFC2E6);
+  border-radius:var(--radius-lg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:var(--green-900);text-align:center;
+  font-size:14px;font-weight:600;line-height:1.4;
+  min-height:220px;
+}
+.photo-ph svg{width:46px;height:46px;opacity:.5}
+.photo-ph small{font-weight:400;color:var(--muted)}
+.photo-ph--square{aspect-ratio:4/5}
+.photo-ph--dark{
+  background:linear-gradient(160deg,#6B49A1,#5B3A8E);
+  color:rgba(255,255,255,.85);
+}
+.photo-ph--dark small{color:rgba(255,255,255,.6)}
+
+.about__media img{border-radius:var(--radius-lg);aspect-ratio:4/5;object-fit:cover;width:100%}
+.home-visit img{border-radius:var(--radius-md);width:100%;height:100%;object-fit:cover}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--green-950);color:rgba(255,255,255,.8);padding:64px 0 28px}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px;
+}
+.footer-grid h4{color:#fff;font-size:15px;margin-bottom:14px}
+.footer-grid ul{display:grid;gap:9px;font-size:14.5px}
+.footer-grid a{color:rgba(255,255,255,.8);text-decoration:none}
+.footer-grid a:hover{color:var(--accent)}
+.footer-grid p{font-size:14.5px;margin-top:14px}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:22px;font-size:13px;color:rgba(255,255,255,.6);
+}
+.footer-bottom p{margin:0 0 6px}
+.disclaimer{font-style:italic}
+
+/* ============================================================
+   WHATSAPP FLOTTANTE
+   ============================================================ */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:50;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--wa);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  transition:transform .2s;
+}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:28px;height:28px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
 }
 
-/* ---------- Desktop ---------- */
-@media(min-width:960px){
-  .section{padding:5.5rem 0}
-  /* hero a due colonne, card del form che "scende" sulla sezione successiva */
-  .home-hero{padding:4.5rem 0 0;overflow:visible}
-  /* testo e foto affiancati, form come barra orizzontale sovrapposta al bordo inferiore */
-  .home-hero .wrap{grid-template-columns:1.2fr .8fr;grid-template-areas:"text photo" "form form";align-items:center;gap:2.5rem 3.5rem}
-  .hero-text{grid-area:text}
-  .hero-photo{grid-area:photo;max-width:380px}
-  .hero-watermark{width:620px;left:-120px;top:-40px}
-  .booking{grid-area:form;margin-bottom:-6rem;padding:2rem 2.2rem}
-  .home-hero + .section{padding-top:9.5rem}
-  .form-actions{grid-template-columns:1fr auto 1fr;align-items:center}
-  .or::before,.or::after{display:none}
-  .about{grid-template-columns:.8fr 1.2fr;gap:4rem}
-  .home-visit{padding:3.2rem 3.4rem}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1060px){
+  .grid--4{grid-template-columns:repeat(2,1fr)}
+  .svc-card h3{min-height:0}
+  .hero__bottom{grid-template-columns:380px 1fr}
+  .about{gap:40px}
+}
+
+@media (max-width:920px){
+  .nav{
+    display:none;
+    position:absolute;left:22px;right:22px;top:76px;z-index:20;
+    flex-direction:column;align-items:stretch;
+    background:var(--green-800);border-radius:var(--radius-md);
+    padding:10px;box-shadow:var(--shadow);
+  }
+  .nav.is-open{display:flex}
+  .site-header{position:relative}
+  .nav-toggle{display:inline-flex}
+  .header-phone{font-size:0;gap:0}           /* resta solo l'icona */
+  .header-phone__icon{width:42px;height:42px}
+
+  .hero__top{grid-template-columns:1fr;padding-top:48px}
+  .hero__lead{order:2;margin-top:18px}
+  .hero__title{order:1}
+  .hero__green{padding-bottom:70px}
+  .hero__bottom{grid-template-columns:1fr;margin-top:-40px;gap:18px}
+  .booking-card{margin-top:0;order:2}
+  .hero__photo{order:1;min-height:340px;margin-left:0;position:relative}
+  .hero__photo-img,.hero__photo .photo-ph{position:absolute;border-radius:var(--radius-lg)}
+  .hero__photo--cutout{border-radius:var(--radius-lg)}
+  .hero__cutout{height:92%;left:50%}
+  .hero__blob{left:50%}
+
+  .about{grid-template-columns:1fr}
+  .about__media{max-width:420px}
+  .approccio{grid-template-columns:1fr;gap:32px}
+  .step--offset{margin-left:0}
+  .home-visit{grid-template-columns:1fr;padding:32px}
+  .contact{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:640px){
+  .section{padding:60px 0}
+  .grid--3,.grid--4{grid-template-columns:1fr}
+  .form__row{grid-template-columns:1fr}
+  .section-head--row{flex-direction:column;align-items:flex-start;gap:14px}
+  .approccio__cta{justify-content:flex-start}
+  .footer-grid{grid-template-columns:1fr}
+  .trust-badge{right:12px;bottom:12px;padding:10px 12px}
+  .hero__watermark svg{width:260px;height:260px}
+}
+
+/* ============================================================
+   BLOG – filtri dell'indice e riquadri interni agli articoli
+   (aggiunti per convertire i 32 articoli esistenti al nuovo design)
+   ============================================================ */
+.blog-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filter-pill{
+  min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line);background:#fff;color:var(--ink);
+  font:inherit;font-size:14px;font-weight:500;
+}
+.filter-pill:hover{border-color:var(--accent-deep)}
+.filter-pill[aria-pressed="true"]{background:var(--green-900);border-color:var(--green-900);color:#fff}
+.filter-pill:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.blog-count{margin:0 0 22px;font-size:14px;color:var(--muted)}
+.post-card[hidden]{display:none}
+
+/* riga autore e tempo di lettura sotto il titolo */
+.page-hero .page-hero__meta{margin-top:14px;font-size:14px;color:rgba(255,255,255,.7)}
+
+/* "Cosa puoi fare già da oggi" */
+.article .tips{
+  background:var(--cream);border-radius:var(--radius-lg);
+  padding:22px 24px;margin:28px 0;
+}
+.article .tips h3{margin-top:0}
+.article .tips ul{margin-bottom:0}
+
+/* "Quando rivolgersi subito a un medico" */
+.article .redflags{
+  background:#FBEFEC;border-left:4px solid #B35B4C;
+  border-radius:0 var(--radius-lg) var(--radius-lg) 0;
+  padding:20px 24px;margin:28px 0;
+}
+.article .redflags h3{margin-top:0;color:#8E3D30}
+.article .redflags ul{margin-bottom:0}
+
+/* figura decorativa presente in alcuni articoli */
+.article .art-figure{margin:28px 0;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff}
+.article .art-figure svg{display:block;width:100%;height:auto}
+.article .art-figure figcaption{padding:10px 16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+/* ============================================================
+   RITOCCHI PER IL MOBILE (non cambiano l'aspetto del design)
+   - target touch di almeno 44px (bottone menu, icona telefono, voci menu)
+   - campi del form a 16px su telefono: evita lo zoom automatico di iOS
+   - spazio in fondo al footer: il bottone WhatsApp flottante non copre il testo
+   ============================================================ */
+.nav-toggle{width:44px;height:44px}
+@media (max-width:920px){
+  .header-phone__icon{width:44px;height:44px}
+  .nav__pill{min-height:44px;display:flex;align-items:center}
+}
+@media (max-width:640px){
+  .form__field input,
+  .form__field textarea{font-size:16px}
+  .site-footer{padding-bottom:96px}
+}
+
+/* Desktop: con -70px il form copriva la terza riga del testo introduttivo dell'hero */
+@media (min-width:921px){
+  .booking-card{margin-top:-20px}
+}
+
+/* Schermi intermedi (921-1100px): il menu completo non entrava e "Chi sono" e il nome andavano a capo */
+.logo__name,.nav__pill{white-space:nowrap}
+@media (min-width:921px) and (max-width:1100px){
+  .nav{gap:6px}
+  .nav__pill{padding:9px 11px;font-size:14px}
+  .header-phone{font-size:0;gap:0}  /* resta solo l'icona del telefono */
 }
