@@ -1,21 +1,16 @@
 # Cartella blog — Studio Laddaga
 
-Sezione blog completa: 32 articoli + indice filtrabile, pronta da copiare
-nella cartella del progetto Studioladdaga (dentro una sottocartella `blog/`).
+32 articoli + indice filtrabile, integrati nel design del sito.
 
 ## Contenuto
-- `index.html` — indice del blog con filtri per area (Colonna / Spalla-gomito-mano / Anca-ginocchio-piede / Benessere)
+- `index.html` — indice del blog con filtro per area (Colonna / Arto superiore / Arto inferiore / Altro)
 - 32 articoli in HTML, uno per patologia (naming kebab-case)
-- `assets/blog.css` — foglio di stile condiviso, palette lilla, font Fraunces + Figtree (Google Fonts)
+- Lo stile è in `../css/style.css`, condiviso con la home; il menu e il filtro sono in `../js/main.js`
 
-## Note per chi integra (Claude Code / sviluppatore)
-1. I link "Home" e "Prenota una valutazione" puntano a `../index.html` e `../index.html#contatti`:
-   funzionano quando la cartella `blog/` sta dentro la root del sito accanto a `index.html`.
-2. Nel footer ci sono segnaposto da sostituire: telefono, email, indirizzo.
-3. La home del sito può linkare `blog/index.html` e mostrare in anteprima le card
-   (il markup `.card` in `blog/index.html` è riutilizzabile).
-4. Palette: #F7F5FB sfondo, #2C2142 lilla profondo, #6E4FA3 lilla primario,
-   #9A7BC8 accento, #C9BFDD lilla tenue — da riprendere anche nella home.
+## Struttura di un articolo
+Intestazione `.page-hero` (categoria, titolo, introduzione, autore), corpo `<article class="article">`
+con `<h2>`, `<p>`, `<ul>` e i riquadri `.tips` (consigli pratici) e `.redflags` (quando rivolgersi
+a un medico), poi l'avviso `.avviso` e l'invito a prenotare `.article-cta`.
 
 ## Nota sui contenuti (importante)
 Gli articoli sono scritti in linguaggio divulgativo su base di linee guida ed evidenze
