@@ -15,10 +15,10 @@
   <meta property="og:locale" content="it_IT">
   <meta property="og:image" content="https://www.studioladdaga.it/img/antonella-laddaga-logo.png">
 
-  <!-- Font: Inter (come il design di riferimento) -->
+  <!-- Font: Marcellus per i titoli, Figtree per i testi -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
@@ -64,11 +64,8 @@
   -->
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
 
-  <!-- ===================== HERO (blocco verde scuro + form sovrapposto) ===================== -->
+  <!-- ===================== HERO ===================== -->
   <section class="hero" id="top">
-    <div class="hero__green">
-
-      <!-- Header dentro l'hero, come nel design di riferimento -->
       <header class="site-header">
         <div class="container site-header__inner">
           <a class="logo" href="index.html" aria-label="Studio Laddaga – Home">
@@ -101,21 +98,43 @@
         </div>
       </header>
 
-      <!-- Riga alta dell'hero: paragrafo a sinistra, titolo grande a destra -->
-      <div class="container hero__top">
+    <!-- Titolo a sinistra, Antonella dentro gli archi del logo a destra -->
+    <div class="container hero__stage">
+      <div class="hero__copy">
+        <h1 class="hero__title">Ritrova il movimento.<br>Senza dolore.</h1>
         <p class="hero__lead">Fisioterapia personalizzata a Gravina in Puglia, in studio e a domicilio, per ritrovare forza, mobilità e fiducia nel tuo corpo.</p>
-        <h1 class="hero__title">Ritrova il movimento.<br>Senza <span class="accent">dolore</span>.</h1>
+        <a class="btn btn--primary" href="#prenota">Prenota una valutazione</a>
       </div>
 
-      <!-- Filigrana del logo sullo sfondo, come nel riferimento -->
-      <span class="hero__watermark" aria-hidden="true">
-        <img src="img/simbolo-trasparente.png" width="348" height="470" alt="">
-      </span>
+      <figure class="hero__figure">
+        <svg class="hero__arcs" viewBox="0 0 600 700" width="600" height="700" role="img" aria-label="Antonella Laddaga, fisioterapista a Gravina in Puglia">
+          <defs>
+            <clipPath id="hero-clip"><path d="M290 24A345 345 0 0 0 262 680H338A345 345 0 0 0 310 24Z"/></clipPath>
+          </defs>
+          <g class="hero__open">
+            <path d="M290 24A345 345 0 0 0 262 680H338A345 345 0 0 0 310 24Z" fill="#E9E2F5"/>
+          </g>
+          <g clip-path="url(#hero-clip)">
+            <image class="hero__portrait" href="img/antonella-cutout-800.webp" x="52" y="86" width="496" height="594" preserveAspectRatio="xMidYMax slice"/>
+          </g>
+          <g class="hero__open" fill="none" stroke-width="34" stroke-linecap="round">
+            <path class="arc arc--left" pathLength="1" d="M290 24A345 345 0 0 0 262 680" stroke="#5B3A8E"/>
+            <path class="arc arc--right" pathLength="1" d="M310 24A345 345 0 0 1 338 680" stroke="#C3B3DF"/>
+          </g>
+        </svg>
+        <p class="hero__note">Pazienti seguiti con cura, in studio e a domicilio</p>
+      </figure>
     </div>
+  </section>
 
-    <!-- Parte bassa: form di prenotazione (sovrapposto al verde) + foto grande -->
-    <div class="container hero__bottom">
-      <div class="booking-card" id="prenota">
+  <!-- ===================== PRENOTAZIONE ===================== -->
+  <section class="booking" id="prenota" aria-labelledby="prenota-title">
+    <div class="container booking__inner">
+      <div class="booking__side">
+        <h2 id="prenota-title">Prenota una valutazione</h2>
+        <p>Per informazioni o per prenotare una valutazione, chiamami o scrivimi.</p>
+      </div>
+      <div class="booking-card">
         <!--
           FORMSPREE: per attivare il modulo
           1) crea un account gratuito su https://formspree.io
@@ -171,24 +190,6 @@
         </form>
       </div>
 
-      <!-- Foto grande dell'hero.
-           SOSTITUIRE il div segnaposto con:
-           <img class="hero__photo-img" src="img/hero.jpg" alt="Trattamento fisioterapico in studio"> -->
-      <div class="hero__photo hero__photo--cutout">
-        <span class="hero__blob" aria-hidden="true"></span>
-        <picture>
-          <source srcset="img/antonella-cutout-800.webp" type="image/webp">
-          <img class="hero__cutout" src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista a Gravina in Puglia" fetchpriority="high">
-        </picture>
-
-        <!-- Badge in basso a destra, come nel riferimento -->
-        <div class="trust-badge">
-          <div class="trust-badge__avatars" aria-hidden="true">
-            <span>A</span><span>M</span><span>G</span>
-          </div>
-          <p>Pazienti seguiti con cura,<br>in studio e a domicilio</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -282,13 +283,7 @@
     <section class="section section--white" id="chi-sono" aria-labelledby="chi-sono-title">
       <div class="container about">
         <div class="about__media reveal">
-          <div class="about__frame">
-            <span class="about__blob" aria-hidden="true"></span>
-            <picture>
-              <source srcset="img/antonella-cutout-800.webp" type="image/webp">
-              <img src="img/antonella-cutout.png" width="860" height="1029" alt="Antonella Laddaga, fisioterapista" loading="lazy">
-            </picture>
-          </div>
+          <img src="img/antonella.jpg" width="942" height="1177" alt="Antonella Laddaga nel suo studio di fisioterapia" loading="lazy">
           <!-- Badge scuro sovrapposto alla foto, come il "15+" del riferimento.
                Se vuoi indicare gli anni di esperienza, scrivili al posto del testo. -->
           <div class="about__badge">
@@ -362,11 +357,13 @@
               <a class="btn btn--ghost-light" href="tel:[NUMERO]">Chiama ora</a>
             </div>
           </div>
-          <!-- SOSTITUIRE con: <img src="img/domicilio.jpg" alt="Fisioterapia a domicilio"> -->
-          <div class="photo-ph photo-ph--dark" role="img" aria-label="Fisioterapia a domicilio (segnaposto)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-            <span>Foto in arrivo<br><small>img/domicilio.jpg</small></span>
-          </div>
+          <!-- Quando c'è una foto reale, sostituire il simbolo con:
+               <img src="img/domicilio.jpg" alt="Fisioterapia a domicilio"> -->
+          <svg class="home-visit__mark" viewBox="0 0 600 700" fill="none" stroke-width="34" stroke-linecap="round" aria-hidden="true">
+            <path d="M290 24A345 345 0 0 0 262 680" stroke="#5B3A8E"/>
+            <path d="M310 24A345 345 0 0 1 338 680" stroke="#FFFFFF"/>
+            <circle cx="300" cy="350" r="62" fill="#2E1C50"/>
+          </svg>
         </div>
       </div>
     </section>

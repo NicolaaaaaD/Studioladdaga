@@ -50,6 +50,29 @@
     });
   });
 
+  /* ---------- La linea dei 4 passi avanza con lo scorrimento ---------- */
+  var steps = document.querySelector(".steps");
+  var calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (steps && !calmMotion) {
+    var ticking = false;
+    var updateSteps = function () {
+      var rect = steps.getBoundingClientRect();
+      var view = window.innerHeight;
+      var progress = (view * 0.85 - rect.top) / (rect.height + view * 0.35);
+      steps.style.setProperty("--p", Math.min(1, Math.max(0, progress)).toFixed(3));
+      ticking = false;
+    };
+    var requestUpdate = function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateSteps);
+      }
+    };
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    updateSteps();
+  }
+
   /* ---------- Invio del form (Formspree) ---------- */
   var form = document.getElementById("booking-form");
   if (!form) return;
