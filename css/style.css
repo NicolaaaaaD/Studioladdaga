@@ -274,8 +274,11 @@ svg{display:block}
 .page-hero__actions .btn svg,.article-cta .btn svg{width:20px;height:20px;flex:0 0 auto}
 .article-cta .hero__actions .btn--whatsapp{color:#fff}
 .other-services__title{font-size:clamp(32px,3.8vw,48px);color:var(--viola);margin-bottom:32px}
-.services__cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;margin-top:44px}
-.services__cta p{margin:0;font-family:var(--font-title);font-size:clamp(23px,2.4vw,30px);line-height:1.2;color:#fff;max-width:30ch}
+.services-cta{background:#fff;padding:56px 0}
+.services__cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px}
+.services__call{min-height:60px;padding:16px 32px;font-size:18px}
+.services__call svg{width:22px;height:22px;flex:0 0 auto}
+.services__cta p{margin:0;font-family:var(--font-title);font-size:clamp(24px,2.6vw,32px);line-height:1.2;color:var(--viola);max-width:30ch}
 
 /* ============================================================
    CHI SONO
@@ -558,6 +561,8 @@ svg{display:block}
   .logo__name{font-size:19px}
 
   /* Su telefono la home mostra tre articoli: gli altri sono nel blog */
+  .services-cta{padding:44px 0}
+  .services__call{width:100%}
   #blog .post-card:nth-child(n+4){display:none}
 
   /* Telefono: intestazione essenziale, azioni nella barra in basso */
