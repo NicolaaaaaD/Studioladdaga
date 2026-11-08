@@ -23,7 +23,7 @@ testo `#22302D`, crema `#F2F0EB`. Il verde è usato solo per WhatsApp.
 ## Dati da completare
 
 Nei file HTML ci sono segnaposto tra parentesi quadre da sostituire con i dati reali:
-`[INDIRIZZO]`, `[ORARI]`, `[PROFILO]`, `[PARTITA IVA]`.
+`[PROFILO]`, `[PARTITA IVA]`.
 
 Le foto illustrative sono in `img/blog/`, con gli autori elencati in `img/blog/CREDITI.md`.
 
