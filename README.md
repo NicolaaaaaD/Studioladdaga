@@ -23,8 +23,9 @@ testo `#22302D`, crema `#F2F0EB`. Il verde è usato solo per WhatsApp.
 ## Dati da completare
 
 Nei file HTML ci sono segnaposto tra parentesi quadre da sostituire con i dati reali:
-`[NUMERO]`, `[WHATSAPP]`, `[EMAIL]`, `[INDIRIZZO]`, `[ORARI]`, `[PROFILO]`, `[PARTITA IVA]`.
-Nei link `wa.me/[WHATSAPP]` il numero va in formato internazionale senza "+" (es. `393331234567`).
+`[INDIRIZZO]`, `[ORARI]`, `[PROFILO]`, `[PARTITA IVA]`.
+
+Le foto illustrative sono in `img/blog/`, con gli autori elencati in `img/blog/CREDITI.md`.
 
 Per attivare il modulo di prenotazione, in `index.html` sostituire `IL_TUO_ID`
 nell'attributo `action` del form con l'ID del proprio form Formspree.

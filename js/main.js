@@ -2,7 +2,7 @@
    STUDIO LADDAGA – Script principale
    - menu mobile
    - invio del form via Formspree (senza ricaricare la pagina)
-   - animazione "reveal" discreta
+   - animazioni leggere (nessuna libreria esterna)
    - anno corrente nel footer
    ============================================================ */
 
@@ -42,11 +42,18 @@
       var cat = btn.getAttribute("data-filter");
       var shown = 0;
       filters.forEach(function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
-      posts.forEach(function (post) {
-        post.hidden = cat !== "tutti" && post.getAttribute("data-category") !== cat;
-        if (!post.hidden) shown++;
-      });
-      if (count) count.textContent = shown + (shown === 1 ? " articolo" : " articoli");
+      var applyFilter = function () {
+        posts.forEach(function (post) {
+          post.hidden = cat !== "tutti" && post.getAttribute("data-category") !== cat;
+          if (!post.hidden) shown++;
+        });
+        if (count) count.textContent = shown + (shown === 1 ? " articolo" : " articoli");
+      };
+      if (document.startViewTransition && !calmMotion && !document.hidden) {
+        document.startViewTransition(applyFilter);
+      } else {
+        applyFilter();
+      }
     });
   });
 
@@ -54,12 +61,19 @@
   var steps = document.querySelector(".steps");
   var calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (steps && !calmMotion) {
+    var stepItems = Array.prototype.slice.call(steps.querySelectorAll(".step"));
+    steps.classList.add("steps--live");
     var ticking = false;
     var updateSteps = function () {
       var rect = steps.getBoundingClientRect();
       var view = window.innerHeight;
       var progress = (view * 0.85 - rect.top) / (rect.height + view * 0.35);
-      steps.style.setProperty("--p", Math.min(1, Math.max(0, progress)).toFixed(3));
+      var p = Math.min(1, Math.max(0, progress));
+      steps.style.setProperty("--p", p.toFixed(3));
+      // Ogni passo si accende quando la linea lo raggiunge
+      stepItems.forEach(function (item, i) {
+        item.classList.toggle("is-on", p >= (i + 0.1) / stepItems.length);
+      });
       ticking = false;
     };
     var requestUpdate = function () {
@@ -72,6 +86,57 @@
     window.addEventListener("resize", requestUpdate);
     updateSteps();
   }
+
+  /* ---------- Intestazione: si stacca dalla pagina quando si scorre ---------- */
+  var siteHeader = document.querySelector(".site-header");
+  if (siteHeader) {
+    var headerTicking = false;
+    var updateHeader = function () {
+      siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
+      headerTicking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!headerTicking) {
+        headerTicking = true;
+        window.requestAnimationFrame(updateHeader);
+      }
+    }, { passive: true });
+    updateHeader();
+  }
+
+  /* ---------- Comparsa discreta: una volta sola, solo con JavaScript attivo ---------- */
+  if (!calmMotion && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+
+    document.querySelectorAll(".service, .home-visit__photo, .approccio__photo, #blog .post-card, .booking-card")
+      .forEach(function (el) {
+        // Elementi vicini compaiono uno dopo l'altro, con un ritardo minimo
+        var siblings = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.setProperty("--d", Math.min(siblings, 5) * 70 + "ms");
+        el.classList.add("anim");
+        revealObserver.observe(el);
+      });
+  }
+
+  /* ---------- Dal blog all'articolo: la foto della scheda diventa la copertina ---------- */
+  document.querySelectorAll(".post-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      var photo = card.querySelector("img");
+      if (photo && !calmMotion) photo.style.viewTransitionName = "copertina";
+    });
+  });
+  window.addEventListener("pageshow", function () {
+    document.querySelectorAll(".post-card img").forEach(function (photo) {
+      photo.style.viewTransitionName = "";
+    });
+  });
 
   /* ---------- Invio del form (Formspree) ---------- */
   var form = document.getElementById("booking-form");
