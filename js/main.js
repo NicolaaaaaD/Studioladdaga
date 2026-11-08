@@ -104,6 +104,45 @@
     updateHeader();
   }
 
+  /* ---------- Menu: si chiude toccando fuori o con Esc ---------- */
+  if (toggle && nav) {
+    var closeNav = function () {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Apri il menu");
+    };
+    document.addEventListener("click", function (e) {
+      if (nav.classList.contains("is-open") && !e.target.closest("#main-nav, .nav-toggle")) closeNav();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeNav();
+    });
+  }
+
+  /* ---------- Barra rapida: nascosta se ripete i pulsanti visibili o mentre si scrive ---------- */
+  var quickBar = document.querySelector(".quick-bar");
+  if (quickBar) {
+    var heroButtons = document.querySelector(".hero__copy .hero__actions, .page-hero__actions");
+    var buttonsVisible = false;
+    var typing = false;
+    var updateBar = function () {
+      quickBar.classList.toggle("is-hidden", buttonsVisible || typing);
+    };
+    if (heroButtons && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        buttonsVisible = entries[0].isIntersecting;
+        updateBar();
+      }, { rootMargin: "-65px 0px 0px 0px" }).observe(heroButtons);
+    }
+    document.addEventListener("focusin", function (e) {
+      if (e.target.matches("input, textarea, select")) { typing = true; updateBar(); }
+    });
+    document.addEventListener("focusout", function () {
+      typing = false;
+      updateBar();
+    });
+  }
+
   /* ---------- Comparsa discreta: una volta sola, solo con JavaScript attivo ---------- */
   if (!calmMotion && "IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
