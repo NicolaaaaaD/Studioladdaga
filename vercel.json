@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/fibromialgia.html",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ]
+}

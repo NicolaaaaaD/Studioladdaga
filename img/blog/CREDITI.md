@@ -32,7 +32,6 @@ Foto da Unsplash (https://unsplash.com/license): uso gratuito, citazione non obb
 | lesioni-muscolari.jpg | Alora Griffiths | https://unsplash.com/photos/WX7FSaiYxK8 |
 | dolore-anca-coxartrosi.jpg | Osman İçli | https://unsplash.com/photos/SkIGHBmBWOQ |
 | dolore-cronico.jpg | BĀBI | https://unsplash.com/photos/BkL3E-8tyNE |
-| fibromialgia.jpg | Sinitta Leunen | https://unsplash.com/photos/G25JESFXybQ |
 | linfedema.jpg | Sincerely Media | https://unsplash.com/photos/mvHuY-t4QII |
 | osteoporosi-esercizio.jpg | Tony Woodhead | https://unsplash.com/photos/kYdkUweH8QU |
 | riabilitazione-post-chirurgica.jpg | Towfiqu barbhuiya | https://unsplash.com/photos/B3PxVCnbsSI |

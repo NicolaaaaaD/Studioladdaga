@@ -11,7 +11,7 @@ css/style.css         unico foglio di stile (home, blog e articoli)
 js/main.js            menu mobile, filtro del blog, invio form Formspree, anno nel footer
 img/                  logo, favicon, foto (antonella-cutout: PNG + versione WebP leggera)
 blog/index.html       indice del blog con filtro per area (Colonna, Arto superiore, Arto inferiore, Altro)
-blog/*.html           32 articoli, tutti con la stessa struttura (page-hero + article + article-cta)
+blog/*.html           31 articoli, tutti con la stessa struttura (page-hero + article + article-cta)
 sitemap.xml, robots.txt
 ```
 
