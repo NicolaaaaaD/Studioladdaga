@@ -143,7 +143,7 @@
     });
   }
 
-  /* ---------- Comparsa discreta: una volta sola, solo con JavaScript attivo ---------- */
+  /* ---------- Le foto dei servizi si aprono ad arco quando arrivano sullo schermo ---------- */
   if (!calmMotion && "IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -154,7 +154,7 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
 
-    document.querySelectorAll(".service, .home-visit__photo, .approccio__photo, #blog .post-card, .booking-card")
+    document.querySelectorAll(".service")
       .forEach(function (el) {
         // Elementi vicini compaiono uno dopo l'altro, con un ritardo minimo
         var siblings = Array.prototype.indexOf.call(el.parentNode.children, el);
@@ -187,9 +187,22 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Se l'ID di Formspree non è ancora stato configurato, avvisa chi gestisce il sito
+    // Finché l'ID di Formspree non è configurato, la richiesta parte su WhatsApp già scritta
     if (form.action.indexOf("IL_TUO_ID") !== -1) {
-      setStatus("Il modulo non è ancora attivo: configura l'ID di Formspree (vedi il commento nell'HTML).", true);
+      var val = function (name) {
+        var field = form.elements[name];
+        return field && field.value ? field.value.trim() : "";
+      };
+      var quando = val("data_e_ora");
+      if (quando) {
+        var d = new Date(quando);
+        if (!isNaN(d)) quando = d.toLocaleString("it-IT", { dateStyle: "full", timeStyle: "short" });
+      }
+      var righe = ["Buongiorno Antonella, vorrei richiedere un appuntamento.", "", "Nome: " + val("nome"), "Telefono: " + val("telefono"), "Email: " + val("email")];
+      if (quando) righe.push("Data e ora preferite: " + quando);
+      if (val("messaggio")) righe.push("", val("messaggio"));
+      window.open("https://wa.me/393451145245?text=" + encodeURIComponent(righe.join("\n")), "_blank", "noopener");
+      setStatus("Ti ho aperto WhatsApp con la richiesta già scritta: premi Invia per mandarla.", false, true);
       return;
     }
 

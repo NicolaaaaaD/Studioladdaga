@@ -19,7 +19,7 @@
   --muted:#5A5566;
   --line:#DCD6E6;
   --wa:#25D366;
-  --wa-scuro:#128C4B;
+  --wa-scuro:#0E7A41;
 
   /* Caratteri */
   --font-title:"Marcellus","Times New Roman",serif;
@@ -81,7 +81,7 @@ svg{display:block}
 .btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .btn--ghost-light:hover{border-color:#fff}
 .btn--whatsapp{background:var(--wa-scuro);color:#fff}
-.btn--whatsapp:hover{background:#0E7540}
+.btn--whatsapp:hover{background:#0B6436}
 .btn--whatsapp svg{width:20px;height:20px}
 .btn--block{width:100%}
 
@@ -343,7 +343,7 @@ svg{display:block}
 }
 .section--cream .post-card{background:#fff}
 .section--white .post-card{background:var(--carta)}
-.post-card:hover h3{color:var(--viola);text-decoration:underline;text-underline-offset:3px}
+.post-card:hover :is(h2,h3){color:var(--viola);text-decoration:underline;text-underline-offset:3px}
 .post-card__img{height:200px;overflow:hidden;background:var(--lilla-tenue)}
 .post-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
 .post-card:hover .post-card__img img{transform:scale(1.04)}
@@ -353,7 +353,7 @@ svg{display:block}
   color:var(--viola);background:var(--lilla-tenue);
   padding:4px 11px;border-radius:999px;margin-bottom:10px;
 }
-.post-card h3{font-size:20px;margin-bottom:8px}
+.post-card :is(h2,h3){font-family:var(--font-body);font-weight:600;line-height:1.25;font-size:20px;margin-bottom:8px}
 .post-card p{margin:0;color:var(--muted);font-size:16px}
 
 /* In home il primo articolo è in evidenza */
@@ -408,7 +408,7 @@ svg{display:block}
 .article-cover img{width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;border-radius:var(--radius-lg)}
 .article{max-width:740px;margin-inline:auto;padding:48px 24px 84px}
 .article h2{font-size:clamp(28px,3.2vw,36px);margin-top:1.7em;color:var(--viola)}
-.article h3{font-size:21px;margin-top:1.5em}
+.article h3{font-size:23px;margin-top:1.5em;color:var(--notte)}
 .article p,.article li{font-size:18px;line-height:1.72}
 .article ul{list-style:disc;padding-left:1.3em;margin-bottom:1em;display:block}
 .article ul li{margin-bottom:.4em}
@@ -646,7 +646,7 @@ a,button,summary{touch-action:manipulation}
   .post-card .tag,
   .post-card p,
   #blog .post-card:first-child p{display:none}
-  .post-card h3,
+  .post-card :is(h2,h3),
   #blog .post-card:first-child h3{font-family:var(--font-body);font-weight:600;font-size:17px;line-height:1.3;margin:0;color:var(--ink)}
 
   /* Filtro del blog sempre a portata di mano */
@@ -716,11 +716,8 @@ a,button,summary{touch-action:manipulation}
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:scale(.98)}
 
-.anim{
-  opacity:0;transform:translateY(18px);
-  transition:opacity .6s ease var(--d,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms);
-}
-.anim.is-in{opacity:1;transform:none}
+/* Nessun contenuto resta nascosto in attesa dello scorrimento:
+   l'unico gesto legato allo scorrimento sono le foto dei servizi che si aprono ad arco */
 
 /* I riquadri dei servizi si aprono ad arco, come il logo */
 .service.anim img{
@@ -752,6 +749,20 @@ a,button,summary{touch-action:manipulation}
 .article-cover img{view-transition-name:copertina}
 ::view-transition-group(copertina){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
 
+/* Risposta al puntatore: la scheda si solleva appena */
+.post-card{transition:background .2s,transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease}
+.post-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+
+/* Dettagli del browser con i colori dello studio */
+::selection{background:var(--lilla);color:var(--notte)}
+html{accent-color:var(--viola);caret-color:var(--viola)}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+
+/* Sulle sezioni scure il contorno di selezione da tastiera diventa chiaro */
+#servizi :focus-visible,#approccio :focus-visible,.booking__side :focus-visible,
+.site-footer :focus-visible,.page-hero :focus-visible,#blog .post-card:first-child:focus-visible{outline-color:#fff}
+
 @media (prefers-reduced-motion:reduce){
   @view-transition{navigation:none}
   .btn:hover,.btn:active{transform:none}
@@ -762,4 +773,6 @@ a,button,summary{touch-action:manipulation}
   .hero__open,.hero__portrait{animation:none}
   .btn,.post-card,.post-card__img img,.filter-pill,.wa-float,.quick-bar{transition:none}
   .post-card:hover .post-card__img img{transform:none}
+  .post-card:hover{transform:none}
+  .service.anim img{clip-path:none;transition:none}
 }
